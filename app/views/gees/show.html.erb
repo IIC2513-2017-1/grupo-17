@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @gee.user %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gee.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @gee.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @gee.category %>
+</p>
+
+<p>
+  <strong>Expiration date:</strong>
+  <%= @gee.expiration_date %>
+</p>
+
+<%= link_to 'Edit', edit_gee_path(@gee) %> |
+<%= link_to 'Back', gees_path %>

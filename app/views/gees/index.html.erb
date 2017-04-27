@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Expiration date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gees.each do |gee| %>
+      <tr>
+        <td><%= gee.user %></td>
+        <td><%= gee.name %></td>
+        <td><%= gee.description %></td>
+        <td><%= gee.category %></td>
+        <td><%= gee.expiration_date %></td>
+        <td><%= link_to 'Show', gee %></td>
+        <td><%= link_to 'Edit', edit_gee_path(gee) %></td>
+        <td><%= link_to 'Destroy', gee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gee', new_gee_path %>

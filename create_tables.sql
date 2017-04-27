@@ -12,11 +12,11 @@ CREATE TABLE category (
 
 CREATE TABLE gee (
   gid serial not null primary key,
-  owner int not null references user(uid),
+  user int not null references user(uid),
   name varchar(20) not null unique,
   description varchar(20) not null,
   category int not null references category(cid),
-  expirationDate timestamp not null
+  expiration_date timestamp not null
 );
 
 CREATE TABLE field (
@@ -38,7 +38,7 @@ CREATE TABLE alternative (
 
 CREATE TABLE bet (
   bid serial not null primary key,
-  bettor int not null references user(uid),
+  user int not null references user(uid),
   gee int not null references gee(gid),
   quantity int not null
 );

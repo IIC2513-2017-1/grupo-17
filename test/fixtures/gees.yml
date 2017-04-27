@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  name: MyString
+  description: MyString
+  category: one
+  expiration_date: 2017-04-27 17:17:18
+
+two:
+  user: two
+  name: MyString
+  description: MyString
+  category: two
+  expiration_date: 2017-04-27 17:17:18

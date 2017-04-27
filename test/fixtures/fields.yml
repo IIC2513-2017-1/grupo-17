@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gee: one
+  name: MyString
+  type: 
+  min_value: 1
+  max_value: 1
+
+two:
+  gee: two
+  name: MyString
+  type: 
+  min_value: 1
+  max_value: 1

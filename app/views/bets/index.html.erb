@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Gee</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bets.each do |bet| %>
+      <tr>
+        <td><%= bet.user %></td>
+        <td><%= bet.gee %></td>
+        <td><%= bet.quantity %></td>
+        <td><%= link_to 'Show', bet %></td>
+        <td><%= link_to 'Edit', edit_bet_path(bet) %></td>
+        <td><%= link_to 'Destroy', bet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bet', new_bet_path %>
