@@ -1,0 +1,8 @@
+<div class="fieldForm">
+  <%= select_tag "field_types[]", raw("<option>Number</option><option>Alternatives</option>") %>
+  <%= text_field_tag "field_names[]", nil, placeholder: "Name" %>
+  <%= text_field_tag "field_min_values[]", nil, placeholder: "Min. value" %>
+  <%= text_field_tag "field_max_values[]", nil, placeholder: "Max. value" %>
+
+  <a href="javascript:;" class="remove-field-button">X</a>
+</div>

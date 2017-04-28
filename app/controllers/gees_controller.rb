@@ -24,8 +24,24 @@ class GeesController < ApplicationController
   # POST /gees
   # POST /gees.json
   def create
-    @gee = Gee.new(gee_params)
-
+    new_params = gee_params
+    new_params[:user_id] = 1
+    @gee = Gee.new(new_params)
+    @fields = []
+    types = params[:field_types]
+    names = params[:field_names]
+    min_values = params[:field_min_values]
+    max_values = params[:field_max_values]
+    for i in 0..params[:field_types].length-1
+      field = Field.create(
+        gee: @gee.id,
+        name: names[i],
+        ttype: types[i],
+        min_value: min_values[i],
+        max_value: max_values[i])
+      @fields.push(field)
+    end
+    @gee.fields = @fields
     respond_to do |format|
       if @gee.save
         format.html { redirect_to @gee, notice: 'Gee was successfully created.' }

@@ -1,0 +1,13 @@
+I":(function() {
+  $(function() {
+    $("#add-new-field").on("click", function(e) {
+      e.preventDefault();
+      return $("#field_list").append($("#new_field_form").html());
+    });
+    return $(".remove-field-button").on("click", function() {
+      return $(this).parent().remove();
+    });
+  });
+
+}).call(this);
+:ET

@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-  </div>
-
-  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
@@ -28,7 +23,7 @@
 
   <div class="field">
     <%= f.label :category_id %>
-    <%= f.text_field :category_id %>
+    <%= f.select :category_id, Category.all.collect {|c| [c.name, c.id]}, include_blank: true %>
   </div>
 
   <div class="field">
@@ -36,7 +31,19 @@
     <%= f.datetime_select :expiration_date %>
   </div>
 
+  <div class="fields">
+    <%= f.label :fields %>
+    <div id="field_list">
+      <%= render "field" %>
+    </div>
+    <a href="javascript:;" id="add-new-field">Add New Field</a>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<div style="display: none;" id="new_field_form">
+    <%= render partial: "field" %>
+</div>

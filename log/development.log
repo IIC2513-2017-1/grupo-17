@@ -85,3 +85,1765 @@ FOREIGN KEY ("field_id")
   [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6191653161869772555)[0m
   [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-27 21:34:12 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (5.6ms)
+Completed 200 OK in 31ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 21:34:28 -0300
+Processing by GeesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/media/andres/5E8C49E54C5177B2/workspace/tecweb-grupo17/app/models/gee.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :expiration_date, presence: tru
+             ^):
+  
+app/models/gee.rb:9: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/controllers/gees_controller.rb:7:in `index'
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.1ms)
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 21:35:25 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (1.7ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 1355ms (Views: 1328.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 21:37:10 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_form.html.erb (47.7ms)
+  Rendered gees/new.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 187ms (Views: 149.2ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 21:41:25 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_form.html.erb (15.4ms)
+  Rendered gees/new.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 114ms (Views: 104.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 21:42:20 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.5ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 80ms (Views: 67.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-04-27 21:42:23 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 121ms (Views: 96.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-04-27 21:42:24 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.7ms)
+  Rendered users/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 147ms (Views: 86.0ms | ActiveRecord: 12.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-27 21:43:22 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0VYeOkV6TXKr2SWEa5PWyKgwFoF/ko7gGln/K4KlXiFb8eezFTpIetHzj3scnantl0e5ZZd3+4EYsrtNQ7qRxw==", "user"=>{"username"=>"andres", "email"=>"andresespinosapc@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "andres"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "andresespinosapc@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "andres"], ["email", "andresespinosapc@gmail.com"], ["password", "wena"], ["created_at", 2017-04-28 00:43:22 UTC], ["updated_at", 2017-04-28 00:43:22 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 33ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-04-27 21:43:22 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 82ms (Views: 70.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-04-27 21:43:24 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 139ms (Views: 132.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 21:43:29 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.7ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 103ms (Views: 87.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 21:43:31 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_form.html.erb (13.7ms)
+  Rendered gees/new.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 156ms (Views: 95.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 21:51:45 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.1ms)
+  Rendered gees/_form.html.erb (17.9ms)
+  Rendered gees/new.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 117ms (Views: 102.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 21:51:46 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.6ms)
+  Rendered gees/_field.html.erb (0.1ms)
+  Rendered gees/_form.html.erb (40.3ms)
+  Rendered gees/new.html.erb within layouts/application (52.3ms)
+Completed 200 OK in 334ms (Views: 329.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 21:52:40 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.7ms)
+  Rendered gees/_field.html.erb (0.1ms)
+  Rendered gees/_form.html.erb (19.4ms)
+  Rendered gees/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 117ms (Views: 107.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 21:57:55 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.1ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (24.2ms)
+  Rendered gees/new.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 130ms (Views: 119.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 21:58:14 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.2ms)
+  Rendered gees/_form.html.erb (14.5ms)
+  Rendered gees/new.html.erb within layouts/application (19.6ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/media/andres/5E8C49E54C5177B2/workspace/tecweb-grupo17/app/views/gees/_field.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+ag "field_types[]" placeholder: "Type" );@output_buffer.safe
+                              ^):
+  
+app/views/gees/_field.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/gees/_form.html.erb:36:in `block in _app_views_gees__form_html_erb___885479889790382366_69811677078140'
+app/views/gees/_form.html.erb:1:in `_app_views_gees__form_html_erb___885479889790382366_69811677078140'
+app/views/gees/new.html.erb:3:in `_app_views_gees_new_html_erb___4478923522732840149_69811677195120'
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.1ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.1ms)
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 21:58:34 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (37.7ms)
+  Rendered gees/new.html.erb within layouts/application (47.5ms)
+Completed 200 OK in 133ms (Views: 123.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 22:02:02 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (1.0ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 172ms (Views: 149.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:02:05 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (28.3ms)
+  Rendered gees/new.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 201ms (Views: 174.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:02:07 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.5ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (44.4ms)
+  Rendered gees/new.html.erb within layouts/application (53.4ms)
+Completed 200 OK in 177ms (Views: 170.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:02:14 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.8ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (19.3ms)
+  Rendered gees/new.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 137ms (Views: 128.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:02:14 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.4ms)
+  Rendered gees/_field.html.erb (0.5ms)
+  Rendered gees/_form.html.erb (26.7ms)
+  Rendered gees/new.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 177ms (Views: 158.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:02:15 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.7ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (27.1ms)
+  Rendered gees/new.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 201ms (Views: 194.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:02:16 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.8ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (29.0ms)
+  Rendered gees/new.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 182ms (Views: 175.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:06:23 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.5ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (21.6ms)
+  Rendered gees/new.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 127ms (Views: 111.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:06:56 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.3ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (21.8ms)
+  Rendered gees/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 119ms (Views: 112.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:09:42 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (23.4ms)
+  Rendered gees/new.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 132ms (Views: 119.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 22:43:57 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.7ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 89ms (Views: 83.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:43:59 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.1ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (39.9ms)
+  Rendered gees/new.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 142ms (Views: 136.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:48:16 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (23.9ms)
+  Rendered gees/new.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 482ms (Views: 472.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:50:29 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (21.0ms)
+  Rendered gees/new.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 121ms (Views: 114.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:51:38 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (58.3ms)
+  Rendered gees/new.html.erb within layouts/application (66.3ms)
+Completed 200 OK in 635ms (Views: 579.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:51:48 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (38.6ms)
+  Rendered gees/new.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 135ms (Views: 122.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:57:41 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (24.7ms)
+  Rendered gees/new.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 696ms (Views: 684.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:58:10 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (21.0ms)
+  Rendered gees/new.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 186ms (Views: 171.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:58:11 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.1ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (54.5ms)
+  Rendered gees/new.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 207ms (Views: 188.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:59:14 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (22.5ms)
+  Rendered gees/new.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 464ms (Views: 451.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:59:17 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (18.3ms)
+  Rendered gees/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 143ms (Views: 133.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:59:19 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.1ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (25.8ms)
+  Rendered gees/new.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 144ms (Views: 134.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:59:22 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.4ms)
+  Rendered gees/_field.html.erb (0.5ms)
+  Rendered gees/_form.html.erb (36.0ms)
+  Rendered gees/new.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 191ms (Views: 178.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:59:23 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.1ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (23.2ms)
+  Rendered gees/new.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 131ms (Views: 116.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:59:27 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.4ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (44.8ms)
+  Rendered gees/new.html.erb within layouts/application (65.7ms)
+Completed 200 OK in 182ms (Views: 163.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:59:30 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (2.1ms)
+  Rendered gees/_form.html.erb (23.3ms)
+  Rendered gees/new.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 129ms (Views: 115.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 22:59:54 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.1ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (24.1ms)
+  Rendered gees/new.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 129ms (Views: 117.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:00:56 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.3ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (54.5ms)
+  Rendered gees/new.html.erb within layouts/application (60.2ms)
+Completed 200 OK in 207ms (Views: 198.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:01:19 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.1ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (83.4ms)
+  Rendered gees/new.html.erb within layouts/application (87.9ms)
+Completed 200 OK in 248ms (Views: 242.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:03:34 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.8ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (20.9ms)
+  Rendered gees/new.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 441ms (Views: 432.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:03:38 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.8ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (57.4ms)
+  Rendered gees/new.html.erb within layouts/application (63.1ms)
+Completed 200 OK in 168ms (Views: 159.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:03:40 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (3.5ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (23.7ms)
+  Rendered gees/new.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 168ms (Views: 162.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:00 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (21.3ms)
+  Rendered gees/new.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 508ms (Views: 494.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:03 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (34.6ms)
+  Rendered gees/new.html.erb within layouts/application (44.3ms)
+Completed 200 OK in 162ms (Views: 144.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:06 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (59.9ms)
+  Rendered gees/new.html.erb within layouts/application (96.1ms)
+Completed 200 OK in 273ms (Views: 251.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:07 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.4ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (70.6ms)
+  Rendered gees/new.html.erb within layouts/application (86.1ms)
+Completed 200 OK in 293ms (Views: 283.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:08 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (4.8ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (59.1ms)
+  Rendered gees/new.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 269ms (Views: 262.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:09 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (49.2ms)
+  Rendered gees/new.html.erb within layouts/application (58.4ms)
+Completed 200 OK in 241ms (Views: 235.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:11 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (58.7ms)
+  Rendered gees/new.html.erb within layouts/application (71.9ms)
+Completed 200 OK in 240ms (Views: 230.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:12 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (51.8ms)
+  Rendered gees/new.html.erb within layouts/application (68.3ms)
+Completed 200 OK in 225ms (Views: 213.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:12 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (58.4ms)
+  Rendered gees/new.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 255ms (Views: 247.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:13 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.4ms)
+  Rendered gees/_form.html.erb (75.3ms)
+  Rendered gees/new.html.erb within layouts/application (83.3ms)
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:13 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (46.1ms)
+  Rendered gees/new.html.erb within layouts/application (112.3ms)
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:13 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.5ms)
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:13 -0300
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (97.9ms)
+Processing by GeesController#new as HTML
+  Rendered gees/new.html.erb within layouts/application (107.7ms)
+Completed 200 OK in 545ms (Views: 538.7ms | ActiveRecord: 0.0ms)
+
+
+  Rendering gees/new.html.erb within layouts/application
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:14 -0300
+  Rendered gees/_field.html.erb (0.8ms)
+Processing by GeesController#new as HTML
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (75.5ms)
+  Rendered gees/new.html.erb within layouts/application (86.4ms)
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.8ms)
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:14 -0300
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (135.6ms)
+  Rendered gees/new.html.erb within layouts/application (156.3ms)
+Processing by GeesController#new as HTML
+Completed 200 OK in 699ms (Views: 687.3ms | ActiveRecord: 0.0ms)
+
+
+  Rendering gees/new.html.erb within layouts/application
+Completed 200 OK in 613ms (Views: 604.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 471ms (Views: 445.1ms | ActiveRecord: 0.0ms)
+
+
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (82.3ms)
+  Rendered gees/new.html.erb within layouts/application (99.9ms)
+Completed 200 OK in 504ms (Views: 494.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 350ms (Views: 333.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:16 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.8ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (63.1ms)
+  Rendered gees/new.html.erb within layouts/application (78.2ms)
+Completed 200 OK in 240ms (Views: 233.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:54 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (23.3ms)
+  Rendered gees/new.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 504ms (Views: 495.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:14:59 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.1ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (29.5ms)
+  Rendered gees/new.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 172ms (Views: 124.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:15:12 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.4ms)
+  Rendered gees/_form.html.erb (18.3ms)
+  Rendered gees/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 473ms (Views: 466.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:15:16 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (30.1ms)
+  Rendered gees/new.html.erb within layouts/application (47.6ms)
+Completed 200 OK in 170ms (Views: 156.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:15:42 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.1ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (27.5ms)
+  Rendered gees/new.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 515ms (Views: 504.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:16:00 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.2ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (29.2ms)
+  Rendered gees/new.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 596ms (Views: 588.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:16:05 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (53.1ms)
+  Rendered gees/new.html.erb within layouts/application (70.1ms)
+Completed 200 OK in 195ms (Views: 184.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:16:08 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (55.9ms)
+  Rendered gees/new.html.erb within layouts/application (78.7ms)
+Completed 200 OK in 253ms (Views: 236.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:16:14 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (74.8ms)
+  Rendered gees/new.html.erb within layouts/application (99.8ms)
+Completed 200 OK in 294ms (Views: 281.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:16:16 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.3ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (80.2ms)
+  Rendered gees/new.html.erb within layouts/application (92.6ms)
+Completed 200 OK in 325ms (Views: 298.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:16:18 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (13.1ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (90.3ms)
+  Rendered gees/new.html.erb within layouts/application (96.4ms)
+Completed 200 OK in 273ms (Views: 243.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:16:19 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.7ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (15.1ms)
+  Rendered gees/new.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 108ms (Views: 98.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:16:25 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (2.0ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (38.3ms)
+  Rendered gees/new.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 180ms (Views: 174.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:16:59 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (24.2ms)
+  Rendered gees/new.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 172ms (Views: 157.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:17:17 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.4ms)
+  Rendered gees/_field.html.erb (0.7ms)
+  Rendered gees/_form.html.erb (24.5ms)
+  Rendered gees/new.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 154ms (Views: 138.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:17:21 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S2ZHyVTyw/WIz9iOi1V5MV1ck8FygjISEE87uvvVrlwHmsxCNt6A4OuxlUAbVxcz5vhAXEW2nza3kDnRBG43xg==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"17"}, "field_types"=>["Number", "Number", "Number"], "field_names"=>["", "", ""], "field_min_values"=>["", "", ""], "field_max_values"=>["", "", ""]}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.8ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (18.4ms)
+  Rendered gees/new.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 180ms (Views: 109.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 23:17:28 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.9ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 115ms (Views: 101.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:18:03 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (72.3ms)
+  Rendered gees/new.html.erb within layouts/application (80.4ms)
+Completed 200 OK in 185ms (Views: 172.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:18:06 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JdemOcCS49E8dfKzMWc14mU/pHYNVb016135DhNCl+krm33FkNlfiP/seZcdyOeNyK535U+OorEyOqPp7UNSKw==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"18"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""]}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.7ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (22.9ms)
+  Rendered gees/new.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 146ms (Views: 115.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 23:18:09 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.5ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 107ms (Views: 90.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:18:11 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.4ms)
+  Rendered gees/_form.html.erb (22.7ms)
+  Rendered gees/new.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 232ms (Views: 228.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:18:12 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.8ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (21.3ms)
+  Rendered gees/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 126ms (Views: 119.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:18:17 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wQF350mj+seYc8bbcVTTH5yI/a+wUU2ltwljNn/qXquN/fxsK4+50vsNixXhVr0dJywuModl4IEQ1mFdgFHHMQ==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"18"}, "field_types"=>["Number", "Number", "Number"], "field_names"=>["", "", ""], "field_min_values"=>["", "", ""], "field_max_values"=>["", "", ""]}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (3.5ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.2ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (23.5ms)
+  Rendered gees/new.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 122ms (Views: 104.2ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:18:53 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FhOtU/Ld24A1im9q1guFijvxR1GvJIoPYkXt2G0/ujFa7ybYkPGYlVb0IqRGCeuIgFWUzJgQJyvFmu+zkoQjqw==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"18"}, "field_types"=>["Number", "Number"], "field_names"=>["", ""], "field_min_values"=>["", ""], "field_max_values"=>["", ""]}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.8ms)
+  Rendered gees/_field.html.erb (0.5ms)
+  Rendered gees/_form.html.erb (20.6ms)
+  Rendered gees/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 133ms (Views: 103.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:19:54 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WEmocDPKSrcX780Q3ZJzWg3h2A0OfjYGLHB8f6aBaz8UtSP7UeYJonSRgN5NkB1YtkULkDlKmyKLr34UWTrypQ==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"18"}, "field_types"=>["Number", "Number", "Number", "Number"], "field_names"=>["", "", "", ""], "field_min_values"=>["", "", "", ""], "field_max_values"=>["", "", "", ""]}
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (17.5ms)
+  Rendered gees/new.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 131ms (Views: 109.4ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 23:20:14 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.4ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 93ms (Views: 81.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:20:16 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (69.6ms)
+  Rendered gees/new.html.erb within layouts/application (77.8ms)
+Completed 200 OK in 214ms (Views: 208.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:20:18 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q0Ng1lHSXl/oNmSPe7fYi1oyWlSAg6ikHhaUJf024rGlD7sqAZniBiuv76tXGArk96OJx8JYtyDHcc7CAzcncw==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"20"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""]}
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.2ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (20.0ms)
+  Rendered gees/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 117ms (Views: 103.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:22:03 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnA/dxGIIzpdI6rWZCvr5/Ho3uhsOaSZ6T3A9pFnd0KOjLT8c6RgLz5d5xj0KYXlSkwNdVsNCb1O4sKdbtzu2A==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"20"}, "field_types"=>["Number", "Number"], "field_names"=>["", ""], "field_min_values"=>["", ""], "field_max_values"=>["", ""]}
+  [1m[35m (7.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (5.0ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (24.3ms)
+  Rendered gees/new.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 138ms (Views: 113.4ms | ActiveRecord: 12.5ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:22:08 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aDpxHnkGi/cK/t1uA2IK/9cIiZAWhoOA2fVL2oZ4sHgkxvqVGyrI4mmAkKCTYGT9bKxaDSGyLqR+KkmxecMp4g==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"20"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""], "commit"=>"Create Gee"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (2.2ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (38.7ms)
+  Rendered gees/new.html.erb within layouts/application (45.8ms)
+Completed 200 OK in 155ms (Views: 131.9ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:28:18 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MQy0jis86i6MgZcnkjQ826bzdGsyo8t0hV9478zcj4R98D8FSRCpO+//2ukCNlLZHVen9gWXZlAigHqEM2cWHg==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"20"}, "field_types"=>["Number", "Number", "Number"], "field_names"=>["", "", ""], "field_min_values"=>["", "", ""], "field_max_values"=>["", "", ""]}
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (20.1ms)
+  Rendered gees/new.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 124ms (Views: 109.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 23:33:10 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.6ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 481ms (Views: 466.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:33:13 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.5ms)
+  Rendered gees/_form.html.erb (33.0ms)
+  Rendered gees/new.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 208ms (Views: 201.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:33:14 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rW7arIgZ27BlbMdZ/5W1YPlANgKLzfhW8CooFBLaNyijIgFQ2FJn6ab1TH3TOmcPVNHlkckW59IpTXLz7Nvy6g==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"33"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""]}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (23.5ms)
+  Rendered gees/new.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 143ms (Views: 126.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:33:18 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (27.6ms)
+  Rendered gees/new.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 138ms (Views: 131.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:33:22 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+wTsa4Tk5o4RSf34DoOESsPucSKmoRO7XQS4K8qTFEG3+Gfg5silm3I3sDaegepIeEqiv5GVvp/627pANSiN2w==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"33"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""]}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.5ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (34.7ms)
+  Rendered gees/new.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 163ms (Views: 146.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:33:24 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (19.2ms)
+  Rendered gees/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 98ms (Views: 92.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:37:59 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LfUPjwHoOqQVyzKAqsjTbFEvG+FAfWrEJMWUuDNcnRdhCYQEY8R5sXa1f046yr1u6ovIfHdJx+CDGpbTzOcEjQ==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"33"}, "field_types"=>["Number", "Number"], "field_names"=>["", ""], "field_min_values"=>["", ""], "field_max_values"=>["", ""]}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (23.2ms)
+  Rendered gees/new.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 131ms (Views: 116.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 23:39:03 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.6ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 116ms (Views: 103.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:40:55 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (4.1ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (57.4ms)
+  Rendered gees/new.html.erb within layouts/application (76.1ms)
+Completed 200 OK in 186ms (Views: 178.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:40:57 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.2ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (22.4ms)
+  Rendered gees/new.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 128ms (Views: 119.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:41:27 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.2ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (20.0ms)
+  Rendered gees/new.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 112ms (Views: 100.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:41:31 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (2.7ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (55.5ms)
+  Rendered gees/new.html.erb within layouts/application (72.2ms)
+Completed 200 OK in 164ms (Views: 159.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:41:33 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (50.2ms)
+  Rendered gees/new.html.erb within layouts/application (64.9ms)
+Completed 200 OK in 179ms (Views: 169.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:41:35 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.5ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (37.8ms)
+  Rendered gees/new.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 188ms (Views: 178.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:41:36 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (2.4ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (100.9ms)
+  Rendered gees/new.html.erb within layouts/application (106.6ms)
+Completed 200 OK in 256ms (Views: 248.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:41:38 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (100.6ms)
+  Rendered gees/new.html.erb within layouts/application (108.2ms)
+Completed 200 OK in 298ms (Views: 282.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:43:04 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (22.2ms)
+  Rendered gees/new.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 130ms (Views: 117.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:43:42 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.4ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (22.8ms)
+  Rendered gees/new.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 122ms (Views: 112.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:45:19 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.6ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (18.1ms)
+  Rendered gees/new.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 474ms (Views: 464.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:49:47 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.8ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (26.5ms)
+  Rendered gees/new.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 557ms (Views: 538.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:54:07 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.7ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (30.6ms)
+  Rendered gees/new.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 483ms (Views: 450.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:54:10 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HH/9CiwfvwTGuKu890T1bhtH9Nyv8npuf+ZZKxeDUbBQg3aBTjP8EaXG5nJnRptsoOMnQZjG10rYOVtA6DjIKg==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"54"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""], "commit"=>"Create Gee"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/gees_controller.rb:27:in `inspect'
+app/controllers/gees_controller.rb:27:in `create'
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.1ms)
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:54:36 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HH/9CiwfvwTGuKu890T1bhtH9Nyv8npuf+ZZKxeDUbBQg3aBTjP8EaXG5nJnRptsoOMnQZjG10rYOVtA6DjIKg==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"54"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""], "commit"=>"Create Gee"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.7ms)
+  Rendered gees/_field.html.erb (4.6ms)
+  Rendered gees/_form.html.erb (26.4ms)
+  Rendered gees/new.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 192ms (Views: 140.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-27 23:55:50 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.9ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 96ms (Views: 75.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-27 23:55:55 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.5ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (33.6ms)
+  Rendered gees/new.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 197ms (Views: 173.1ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-27 23:55:56 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4eLRaU4SOHhxXtTjCysFXrrD2HMEkNOPvPtk0yCWua/vrgqVHlmEIbLHX8cnhNcxF1IL4EZLzAtlnD403pd8bQ==", "gee"=>{"name"=>"", "description"=>"", "category_id"=>"", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"02", "expiration_date(5i)"=>"55"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""], "commit"=>"Create Gee"}
+  [1m[35m (4.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.7ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (16.1ms)
+  Rendered gees/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 138ms (Views: 98.0ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-28 00:08:01 -0300
+  
+SyntaxError (/media/andres/5E8C49E54C5177B2/workspace/tecweb-grupo17/app/controllers/gees_controller.rb:88: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/gees_controller.rb:88: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.4ms)
+Started GET "/gees" for 127.0.0.1 at 2017-04-28 00:08:11 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.4ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 99ms (Views: 74.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-28 00:08:13 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (1.1ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (35.0ms)
+  Rendered gees/new.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 247ms (Views: 171.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-04-28 00:08:33 -0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 194ms (Views: 153.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2017-04-28 00:08:35 -0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (6.0ms)
+  Rendered categories/new.html.erb within layouts/application (46.3ms)
+Completed 200 OK in 175ms (Views: 158.2ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2017-04-28 00:08:41 -0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rKctGFnT2O2muC2oePtRPFKlCR4NMOb0ptLNsiiCgFU+UyzuFi7HwONgM1pDYe66g8OUWDXHFUQlYiOK00NmlA==", "category"=>{"name"=>"perros"}, "commit"=>"Create Category"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "perros"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "perros"], ["created_at", 2017-04-28 03:08:41 UTC], ["updated_at", 2017-04-28 03:08:41 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 18ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2017-04-28 00:08:41 -0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 130ms (Views: 118.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-04-28 00:08:45 -0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 181ms (Views: 146.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2017-04-28 00:08:47 -0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (30.5ms)
+  Rendered categories/new.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 199ms (Views: 192.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for 127.0.0.1 at 2017-04-28 00:09:00 -0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JC4rut1JmbnJr+JVKpaHFFWCxrCyTtBIk3gDbGK5BGa22ipMkrSGlIx3/KcRDDiShORb9oq5I/gQyO1UmXjipw==", "category"=>{"name"=>"carreras de caballos"}, "commit"=>"Create Category"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "carreras de caballos"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "carreras de caballos"], ["created_at", 2017-04-28 03:09:00 UTC], ["updated_at", 2017-04-28 03:09:00 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/categories/2
+Completed 302 Found in 18ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2017-04-28 00:09:00 -0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 92ms (Views: 84.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-28 00:09:06 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.8ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  Rendered gees/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 108ms (Views: 95.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-28 00:09:08 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.4ms)
+  Rendered gees/_form.html.erb (42.2ms)
+  Rendered gees/new.html.erb within layouts/application (64.5ms)
+Completed 200 OK in 250ms (Views: 232.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gees/new" for 127.0.0.1 at 2017-04-28 00:15:22 -0300
+Processing by GeesController#new as HTML
+  Rendering gees/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (34.3ms)
+  Rendered gees/new.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 152ms (Views: 136.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-28 00:15:50 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"enFwLLaXIkYuqVG9p0F/dYLhlbThmN8fczxDKYokZCs2jfun1LthU03XHHM3QxF3OUVGKdascjvU40FCdZ/9sQ==", "gee"=>{"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"}, "field_types"=>["Number", "Number"], "field_names"=>["tal vez", "puede "], "field_min_values"=>["", ""], "field_max_values"=>["", ""], "commit"=>"Create Gee"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of Integer into Array):
+  
+app/controllers/gees_controller.rb:34:in `-'
+app/controllers/gees_controller.rb:34:in `create'
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.0ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.8ms)
+Started POST "/gees" for 127.0.0.1 at 2017-04-28 00:16:14 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"enFwLLaXIkYuqVG9p0F/dYLhlbThmN8fczxDKYokZCs2jfun1LthU03XHHM3QxF3OUVGKdascjvU40FCdZ/9sQ==", "gee"=>{"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"}, "field_types"=>["Number", "Number"], "field_names"=>["tal vez", "puede "], "field_min_values"=>["", ""], "field_max_values"=>["", ""], "commit"=>"Create Gee"}
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 4.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'Number'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Field.inheritance_column to use another column for that information.):
+  
+app/controllers/gees_controller.rb:35:in `block in create'
+app/controllers/gees_controller.rb:34:in `create'
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6191653161869772555);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeTypeToTtype (20170428033918)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "fields" RENAME COLUMN "type" TO "ttype"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170428033918"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6191653161869772555)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/gees" for 127.0.0.1 at 2017-04-28 00:40:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"enFwLLaXIkYuqVG9p0F/dYLhlbThmN8fczxDKYokZCs2jfun1LthU03XHHM3QxF3OUVGKdascjvU40FCdZ/9sQ==", "gee"=>{"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"}, "field_types"=>["Number", "Number"], "field_names"=>["tal vez", "puede "], "field_min_values"=>["", ""], "field_max_values"=>["", ""], "commit"=>"Create Gee"}
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'ttype' for Field.):
+  
+app/controllers/gees_controller.rb:35:in `block in create'
+app/controllers/gees_controller.rb:34:in `create'
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.9ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.7ms)
+Started POST "/gees" for 127.0.0.1 at 2017-04-28 00:41:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"enFwLLaXIkYuqVG9p0F/dYLhlbThmN8fczxDKYokZCs2jfun1LthU03XHHM3QxF3OUVGKdascjvU40FCdZ/9sQ==", "gee"=>{"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"}, "field_types"=>["Number", "Number"], "field_names"=>["tal vez", "puede "], "field_min_values"=>["", ""], "field_max_values"=>["", ""], "commit"=>"Create Gee"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mField Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", "tal vez"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mField Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", "puede "], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mField Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", "tal vez"], ["LIMIT", 1]]
+  [1m[36mField Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", "puede "], ["LIMIT", 1]]
+  [1m[36mGee Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered gees/_field.html.erb (1.0ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (52.9ms)
+  Rendered gees/new.html.erb within layouts/application (59.6ms)
+Completed 200 OK in 782ms (Views: 617.1ms | ActiveRecord: 21.6ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-28 00:47:16 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UH2ZA9DSMqz1tFyaz6og1RzYPV7OUwNt+sFOU1e6ka8cgRKIsv5xuZbKEVRfqE7Xp3zuw/lnrkldHkw4qAEINQ==", "gee"=>{"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""], "commit"=>"Create Gee"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mField Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mField Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mGee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered gees/_field.html.erb (0.9ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (23.3ms)
+  Rendered gees/new.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 239ms (Views: 107.7ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-28 00:49:27 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YDx/OTHivwaCvUdptJ6riBCBUPQ4/qXovqt2tNr5QEMswPSyU878E+HDCqcknMWKqyWDaQ/KCMwZdHTfJULZ2Q==", "gee"=>{"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""], "commit"=>"Create Gee"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mField Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mField Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mGee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered gees/_field.html.erb (1.4ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (21.1ms)
+  Rendered gees/new.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 199ms (Views: 98.6ms | ActiveRecord: 17.2ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-28 00:50:38 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZQojoVr5dVO4GyPtm8HFfPMluyhwT0KiIaXZLwJ5nqUp9qgqONU2RttlbiMLw6t+SIFotUd774aGettE/cIHPw==", "gee"=>{"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""], "commit"=>"Create Gee"}
+<ActionController::Parameters {"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"} permitted: true>
+#<Gee id: nil, user_id: nil, name: "test", description: "no", category_id: 2, expiration_date: "2017-04-28 03:15:00", created_at: nil, updated_at: nil>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mField Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mField Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mGee Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered gees/_field.html.erb (0.8ms)
+  Rendered gees/_field.html.erb (0.2ms)
+  Rendered gees/_form.html.erb (20.2ms)
+  Rendered gees/new.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 208ms (Views: 106.5ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-28 00:54:35 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zkdxwrHGr0Oh6hoaRX4x46BZa/E8ISZJIXCIDntplf+Cu/pJ0+rsVsKUV9TVfF/hG/24bAsVi22Gr4plhNIMZQ==", "gee"=>{"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"}, "field_types"=>["Number"], "field_names"=>[""], "field_min_values"=>[""], "field_max_values"=>[""], "commit"=>"Create Gee"}
+<ActionController::Parameters {"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"} permitted: true>
+#<Gee id: nil, user_id: 1, name: "test", description: "no", category_id: 2, expiration_date: "2017-04-28 03:15:00", created_at: nil, updated_at: nil>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mField Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mField Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mGee Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering gees/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered gees/_field.html.erb (0.8ms)
+  Rendered gees/_field.html.erb (0.3ms)
+  Rendered gees/_form.html.erb (25.6ms)
+  Rendered gees/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 306ms (Views: 195.8ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/gees" for 127.0.0.1 at 2017-04-28 00:54:41 -0300
+Processing by GeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6GNcIaVGwWGjHfcoytWpehGvVHB8Kg4117jsYbc6eT6kn9eqx2qCdMBjuuZa18d4qguH7UseoxFwZ+4KSIHgpA==", "gee"=>{"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"}, "field_types"=>["Number"], "field_names"=>["hola"], "field_min_values"=>[""], "field_max_values"=>[""], "commit"=>"Create Gee"}
+<ActionController::Parameters {"name"=>"test", "description"=>"no", "category_id"=>"2", "expiration_date(1i)"=>"2017", "expiration_date(2i)"=>"4", "expiration_date(3i)"=>"28", "expiration_date(4i)"=>"03", "expiration_date(5i)"=>"15"} permitted: true>
+#<Gee id: nil, user_id: 1, name: "test", description: "no", category_id: 2, expiration_date: "2017-04-28 03:15:00", created_at: nil, updated_at: nil>
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mField Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", "hola"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mField Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" IS NULL LIMIT $2[0m  [["name", "hola"], ["LIMIT", 1]]
+  [1m[36mGee Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "gees" WHERE "gees"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "gees" ("user_id", "name", "description", "category_id", "expiration_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["name", "test"], ["description", "no"], ["category_id", 2], ["expiration_date", 2017-04-28 03:15:00 UTC], ["created_at", 2017-04-28 03:54:41 UTC], ["updated_at", 2017-04-28 03:54:41 UTC]]
+  [1m[36mField Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "fields" WHERE "fields"."name" = $1 AND "fields"."gee_id" = 1 LIMIT $2[0m  [["name", "hola"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "fields" ("gee_id", "name", "ttype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["gee_id", 1], ["name", "hola"], ["ttype", "Number"], ["created_at", 2017-04-28 03:54:41 UTC], ["updated_at", 2017-04-28 03:54:41 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/gees/1
+Completed 302 Found in 46ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/gees/1" for 127.0.0.1 at 2017-04-28 00:54:41 -0300
+Processing by GeesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGee Load (0.5ms)[0m  [1m[34mSELECT  "gees".* FROM "gees" WHERE "gees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gees/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gees/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 88ms (Views: 79.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/fields" for 127.0.0.1 at 2017-04-28 00:57:11 -0300
+Processing by FieldsController#index as HTML
+  Rendering fields/index.html.erb within layouts/application
+  [1m[36mField Load (0.5ms)[0m  [1m[34mSELECT "fields".* FROM "fields"[0m
+  [1m[36mGee Load (0.6ms)[0m  [1m[34mSELECT  "gees".* FROM "gees" WHERE "gees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered fields/index.html.erb within layouts/application (52.1ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `type' for #<Field:0x007f6c54a9d428>
+Did you mean?  ttype):
+    19:       <tr>
+    20:         <td><%= field.gee %></td>
+    21:         <td><%= field.name %></td>
+    22:         <td><%= field.type %></td>
+    23:         <td><%= field.min_value %></td>
+    24:         <td><%= field.max_value %></td>
+    25:         <td><%= link_to 'Show', field %></td>
+  
+app/views/fields/index.html.erb:22:in `block in _app_views_fields_index_html_erb__383525479680436587_70051627130400'
+app/views/fields/index.html.erb:18:in `_app_views_fields_index_html_erb__383525479680436587_70051627130400'
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.2ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.8ms)
+Started GET "/fields" for 127.0.0.1 at 2017-04-28 00:58:27 -0300
+Processing by FieldsController#index as HTML
+  Rendering fields/index.html.erb within layouts/application
+  [1m[36mField Load (1.0ms)[0m  [1m[34mSELECT "fields".* FROM "fields"[0m
+  [1m[36mGee Load (0.6ms)[0m  [1m[34mSELECT  "gees".* FROM "gees" WHERE "gees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered fields/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 119ms (Views: 106.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-28 00:59:02 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.9ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gees/index.html.erb within layouts/application (62.6ms)
+Started GET "/gees" for 127.0.0.1 at 2017-04-28 00:59:02 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (4.6ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (4.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gees/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 328ms (Views: 308.9ms | ActiveRecord: 13.5ms)
+
+
+Completed 200 OK in 212ms (Views: 192.2ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-28 00:59:35 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.5ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gees/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 92ms (Views: 83.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-28 00:59:39 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.5ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gees/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 122ms (Views: 109.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-28 00:59:41 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.5ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gees/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 117ms (Views: 108.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-28 00:59:43 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.7ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gees/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 107ms (Views: 95.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/gees" for 127.0.0.1 at 2017-04-28 01:00:14 -0300
+Processing by GeesController#index as HTML
+  Rendering gees/index.html.erb within layouts/application
+  [1m[36mGee Load (0.5ms)[0m  [1m[34mSELECT "gees".* FROM "gees"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gees/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 98ms (Views: 88.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/gees/1" for 127.0.0.1 at 2017-04-28 01:00:32 -0300
+Processing by GeesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGee Load (0.6ms)[0m  [1m[34mSELECT  "gees".* FROM "gees" WHERE "gees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gees/show.html.erb within layouts/application
+  [1m[36mUser Load (14.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gees/show.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 179ms (Views: 142.4ms | ActiveRecord: 16.6ms)
+
+

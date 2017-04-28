@@ -17,10 +17,10 @@
   <tbody>
     <% @gees.each do |gee| %>
       <tr>
-        <td><%= gee.user %></td>
+        <td><%= gee.user.username %></td>
         <td><%= gee.name %></td>
         <td><%= gee.description %></td>
-        <td><%= gee.category %></td>
+        <td><%= gee.category.name %></td>
         <td><%= gee.expiration_date %></td>
         <td><%= link_to 'Show', gee %></td>
         <td><%= link_to 'Edit', edit_gee_path(gee) %></td>
