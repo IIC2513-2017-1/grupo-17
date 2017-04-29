@@ -25,5 +25,26 @@
   <%= @gee.expiration_date %>
 </p>
 
+<p>
+  <strong>Fields:</strong>
+  <% @gee.fields.each do |field| %>
+    <div class="field-data">
+      <strong>Name:</strong> <%= field.name %>
+      <strong>Type:</strong> <%= field.ttype %>
+      <% if field.ttype == 'Number' %>
+        <strong>Min. value:</strong> <%= field.min_value %>
+        <strong>Max. value:</strong> <%= field.max_value %>
+      <% else %>
+        <strong>Alternatives:</strong>
+        <ul>
+          <% field.alternatives.each do |alternative| %>
+            <li><%= alternative.value %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_gee_path(@gee) %> |
 <%= link_to 'Back', gees_path %>

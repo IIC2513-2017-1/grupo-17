@@ -1,0 +1,16 @@
+I"Î(function() {
+  $(document).on("turbolinks:load", function() {
+    $("body").on("click", "#add-new-field", function() {
+      return $("#field_list").append($("#new_field_form").html());
+    });
+    $("body").on("click", ".remove-field-button", function() {
+      return $(this).parent().remove();
+    });
+    return $("body").on("change", ".type-field", function(e) {
+      console.log(e);
+      return console.log($(this).val());
+    });
+  });
+
+}).call(this);
+:ET

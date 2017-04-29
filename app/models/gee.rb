@@ -15,7 +15,7 @@
 class Gee < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  has_many :fields
+  has_many :fields, dependent: :destroy
 
   validates :user, presence: true
   validates :name, presence: true, uniqueness: true

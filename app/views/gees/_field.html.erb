@@ -1,8 +1,14 @@
-<div class="fieldForm">
-  <%= select_tag "field_types[]", raw("<option>Number</option><option>Alternatives</option>") %>
+<div class="field-form">
+  <%= select_tag "field_types[]", raw("<option>Number</option><option>Alternatives</option>"), class: "type-field" %>
   <%= text_field_tag "field_names[]", nil, placeholder: "Name" %>
-  <%= text_field_tag "field_min_values[]", nil, placeholder: "Min. value" %>
-  <%= text_field_tag "field_max_values[]", nil, placeholder: "Max. value" %>
-
+  <%= text_field_tag "field_min_values[]", nil, placeholder: "Min. value", class: "field-for-number" %>
+  <%= text_field_tag "field_max_values[]", nil, placeholder: "Max. value", class: "field-for-number" %>
   <a href="javascript:;" class="remove-field-button">X</a>
+  <div class="alternative-form" style="display: none;">
+    <%= text_field_tag "alternative_numbers[]", 1, class: "alternative-number", style: "display: none;" %>
+    <div class="alternative-list">
+      <%= render "alternative" %>
+    </div>
+    <a href="javascript:;" class="add-new-alternative">Add New Alternative</a>
+  </div>
 </div>
