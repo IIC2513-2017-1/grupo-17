@@ -33,7 +33,7 @@
 
   <div class="fields">
     <%= f.label :fields %>
-    <div id="field_list">
+    <div id="field-list">
       <%= render "field" %>
     </div>
     <a href="javascript:;" id="add-new-field">Add New Field</a>
@@ -44,6 +44,10 @@
   </div>
 <% end %>
 
-<div style="display: none;" id="new_field_form">
+<div style="display: none;" id="new-field-form">
     <%= render partial: "field" %>
+</div>
+
+<div style="display: none;" id="new-alternative">
+    <%= render partial: "alternative" %>
 </div>

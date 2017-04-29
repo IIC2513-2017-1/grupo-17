@@ -1,0 +1,33 @@
+I"á(function() {
+  $(document).on("turbolinks:load", function() {
+    $("body").on("click", "#add-new-field", function() {
+      return $("#field-list").append($("#new-field-form").html());
+    });
+    $("body").on("click", ".remove-field-button", function() {
+      return $(this).parent().remove();
+    });
+    $("body").on("change", ".type-field", function(e) {
+      if ($(this).val() === 'Number') {
+        return console.log('number');
+      } else {
+        $(this).parent().children(".field-for-number").attr("style", "display: none;");
+        return $(this).parent().children(".alternative-form").attr("style", "display: true;");
+      }
+    });
+    $("body").on("click", ".add-new-alternative", function() {
+      $(this).parent().children(".alternative-number").val(function(i, oldval) {
+        return ++oldval;
+      });
+      return $(this).parent().children(".alternative-list").append($("#new-alternative").html());
+    });
+    return $("body").on("click", ".remove-alternative-button", function() {
+      $(this).parent(".alternative-form").children(".alternative-number").val(function(i, oldval) {
+        console.log('hola');
+        return --oldvar;
+      });
+      return $(this).parent().remove();
+    });
+  });
+
+}).call(this);
+:ET
