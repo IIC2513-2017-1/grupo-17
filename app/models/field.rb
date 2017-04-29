@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: fields
+#
+#  id         :integer          not null, primary key
+#  gee_id     :integer
+#  name       :string
+#  ttype      :string
+#  min_value  :integer
+#  max_value  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Field < ApplicationRecord
   belongs_to :gee
   has_many :alternatives, dependent: :destroy
