@@ -1847,3 +1847,302 @@ Processing by GeesController#show as HTML
 Completed 200 OK in 179ms (Views: 142.4ms | ActiveRecord: 16.6ms)
 
 
+  [1m[35m (349.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tecweb"[0m
+  [1m[35m (305.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tecweb-grupo17_test"[0m
+  [1m[35m (6828.4ms)[0m  [1m[35mCREATE DATABASE "tecweb" ENCODING = 'unicode'[0m
+  [1m[35m (6304.6ms)[0m  [1m[35mCREATE DATABASE "tecweb-grupo17_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (8.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (69.5ms)[0m  [1m[35mCREATE TABLE "alternatives" ("id" serial primary key, "field_id" integer, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (37.2ms)[0m  [1m[35mCREATE  INDEX  "index_alternatives_on_field_id" ON "alternatives" USING btree ("field_id")[0m
+  [1m[35m (49.2ms)[0m  [1m[35mCREATE TABLE "bets" ("id" serial primary key, "user_id" integer, "gee_id" integer, "quantity" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (48.0ms)[0m  [1m[35mCREATE  INDEX  "index_bets_on_gee_id" ON "bets" USING btree ("gee_id")[0m
+  [1m[35m (72.9ms)[0m  [1m[35mCREATE  INDEX  "index_bets_on_user_id" ON "bets" USING btree ("user_id")[0m
+  [1m[35m (88.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (119.6ms)[0m  [1m[35mCREATE TABLE "fields" ("id" serial primary key, "gee_id" integer, "name" character varying, "ttype" character varying, "min_value" integer, "max_value" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (69.4ms)[0m  [1m[35mCREATE  INDEX  "index_fields_on_gee_id" ON "fields" USING btree ("gee_id")[0m
+  [1m[35m (85.7ms)[0m  [1m[35mCREATE TABLE "gees" ("id" serial primary key, "user_id" integer, "name" character varying, "description" character varying, "category_id" integer, "expiration_date" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (50.2ms)[0m  [1m[35mCREATE  INDEX  "index_gees_on_category_id" ON "gees" USING btree ("category_id")[0m
+  [1m[35m (34.5ms)[0m  [1m[35mCREATE  INDEX  "index_gees_on_user_id" ON "gees" USING btree ("user_id")[0m
+  [1m[35m (74.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (47.8ms)[0m  [1m[35mCREATE TABLE "values" ("id" serial primary key, "bet_id" integer, "field_id" integer, "value" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (42.1ms)[0m  [1m[35mCREATE  INDEX  "index_values_on_bet_id" ON "values" USING btree ("bet_id")[0m
+  [1m[35m (35.4ms)[0m  [1m[35mCREATE  INDEX  "index_values_on_field_id" ON "values" USING btree ("field_id")[0m
+  [1m[35m (43.9ms)[0m  [1m[35mALTER TABLE "alternatives" ADD CONSTRAINT "fk_rails_a400181bf7"
+FOREIGN KEY ("field_id")
+  REFERENCES "fields" ("id")
+[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "bets" ADD CONSTRAINT "fk_rails_1d03c75bf9"
+FOREIGN KEY ("gee_id")
+  REFERENCES "gees" ("id")
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "bets" ADD CONSTRAINT "fk_rails_87dbfdd206"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "fields" ADD CONSTRAINT "fk_rails_4b617071a0"
+FOREIGN KEY ("gee_id")
+  REFERENCES "gees" ("id")
+[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "gees" ADD CONSTRAINT "fk_rails_f346c7c115"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "gees" ADD CONSTRAINT "fk_rails_15bc77e849"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "values" ADD CONSTRAINT "fk_rails_7002061635"
+FOREIGN KEY ("bet_id")
+  REFERENCES "bets" ("id")
+[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "values" ADD CONSTRAINT "fk_rails_617cd3cb96"
+FOREIGN KEY ("field_id")
+  REFERENCES "fields" ("id")
+[0m
+  [1m[35m (89.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (12.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170428033918)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170427194720),
+(20170427194956),
+(20170427195321),
+(20170427195406),
+(20170427195408),
+(20170427200852),
+(20170427200853);
+
+[0m
+  [1m[35m (77.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-29 05:46:21 UTC], ["updated_at", 2017-04-29 05:46:21 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (75.9ms)[0m  [1m[35mCREATE TABLE "alternatives" ("id" serial primary key, "field_id" integer, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (33.8ms)[0m  [1m[35mCREATE  INDEX  "index_alternatives_on_field_id" ON "alternatives" USING btree ("field_id")[0m
+  [1m[35m (79.5ms)[0m  [1m[35mCREATE TABLE "bets" ("id" serial primary key, "user_id" integer, "gee_id" integer, "quantity" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (57.8ms)[0m  [1m[35mCREATE  INDEX  "index_bets_on_gee_id" ON "bets" USING btree ("gee_id")[0m
+  [1m[35m (49.8ms)[0m  [1m[35mCREATE  INDEX  "index_bets_on_user_id" ON "bets" USING btree ("user_id")[0m
+  [1m[35m (104.6ms)[0m  [1m[35mCREATE TABLE "categories" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (99.6ms)[0m  [1m[35mCREATE TABLE "fields" ("id" serial primary key, "gee_id" integer, "name" character varying, "ttype" character varying, "min_value" integer, "max_value" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (47.6ms)[0m  [1m[35mCREATE  INDEX  "index_fields_on_gee_id" ON "fields" USING btree ("gee_id")[0m
+  [1m[35m (68.3ms)[0m  [1m[35mCREATE TABLE "gees" ("id" serial primary key, "user_id" integer, "name" character varying, "description" character varying, "category_id" integer, "expiration_date" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCREATE  INDEX  "index_gees_on_category_id" ON "gees" USING btree ("category_id")[0m
+  [1m[35m (32.3ms)[0m  [1m[35mCREATE  INDEX  "index_gees_on_user_id" ON "gees" USING btree ("user_id")[0m
+  [1m[35m (84.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (47.6ms)[0m  [1m[35mCREATE TABLE "values" ("id" serial primary key, "bet_id" integer, "field_id" integer, "value" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (37.2ms)[0m  [1m[35mCREATE  INDEX  "index_values_on_bet_id" ON "values" USING btree ("bet_id")[0m
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE  INDEX  "index_values_on_field_id" ON "values" USING btree ("field_id")[0m
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "alternatives" ADD CONSTRAINT "fk_rails_a400181bf7"
+FOREIGN KEY ("field_id")
+  REFERENCES "fields" ("id")
+[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "bets" ADD CONSTRAINT "fk_rails_1d03c75bf9"
+FOREIGN KEY ("gee_id")
+  REFERENCES "gees" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "bets" ADD CONSTRAINT "fk_rails_87dbfdd206"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "fields" ADD CONSTRAINT "fk_rails_4b617071a0"
+FOREIGN KEY ("gee_id")
+  REFERENCES "gees" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "gees" ADD CONSTRAINT "fk_rails_f346c7c115"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "gees" ADD CONSTRAINT "fk_rails_15bc77e849"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "values" ADD CONSTRAINT "fk_rails_7002061635"
+FOREIGN KEY ("bet_id")
+  REFERENCES "bets" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "values" ADD CONSTRAINT "fk_rails_617cd3cb96"
+FOREIGN KEY ("field_id")
+  REFERENCES "fields" ("id")
+[0m
+  [1m[35m (65.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170428033918)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170427194720),
+(20170427194956),
+(20170427195321),
+(20170427195406),
+(20170427195408),
+(20170427200852),
+(20170427200853);
+
+[0m
+  [1m[35m (103.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-29 05:46:22 UTC], ["updated_at", 2017-04-29 05:46:22 UTC]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (2351.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tecweb"[0m
+  [1m[35m (313.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tecweb-grupo17_test"[0m
+  [1m[35m (6274.3ms)[0m  [1m[35mCREATE DATABASE "tecweb" ENCODING = 'unicode'[0m
+  [1m[35m (6055.9ms)[0m  [1m[35mCREATE DATABASE "tecweb-grupo17_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (48.6ms)[0m  [1m[35mCREATE TABLE "alternatives" ("id" serial primary key, "field_id" integer, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (43.1ms)[0m  [1m[35mCREATE  INDEX  "index_alternatives_on_field_id" ON "alternatives" USING btree ("field_id")[0m
+  [1m[35m (40.4ms)[0m  [1m[35mCREATE TABLE "bets" ("id" serial primary key, "user_id" integer, "gee_id" integer, "quantity" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (36.4ms)[0m  [1m[35mCREATE  INDEX  "index_bets_on_gee_id" ON "bets" USING btree ("gee_id")[0m
+  [1m[35m (24.2ms)[0m  [1m[35mCREATE  INDEX  "index_bets_on_user_id" ON "bets" USING btree ("user_id")[0m
+  [1m[35m (72.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (78.9ms)[0m  [1m[35mCREATE TABLE "fields" ("id" serial primary key, "gee_id" integer, "name" character varying, "ttype" character varying, "min_value" integer, "max_value" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (44.9ms)[0m  [1m[35mCREATE  INDEX  "index_fields_on_gee_id" ON "fields" USING btree ("gee_id")[0m
+  [1m[35m (89.6ms)[0m  [1m[35mCREATE TABLE "gees" ("id" serial primary key, "user_id" integer, "name" character varying, "description" character varying, "category_id" integer, "expiration_date" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (58.7ms)[0m  [1m[35mCREATE  INDEX  "index_gees_on_category_id" ON "gees" USING btree ("category_id")[0m
+  [1m[35m (62.1ms)[0m  [1m[35mCREATE  INDEX  "index_gees_on_user_id" ON "gees" USING btree ("user_id")[0m
+  [1m[35m (125.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (72.0ms)[0m  [1m[35mCREATE TABLE "values" ("id" serial primary key, "bet_id" integer, "field_id" integer, "value" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (55.0ms)[0m  [1m[35mCREATE  INDEX  "index_values_on_bet_id" ON "values" USING btree ("bet_id")[0m
+  [1m[35m (45.7ms)[0m  [1m[35mCREATE  INDEX  "index_values_on_field_id" ON "values" USING btree ("field_id")[0m
+  [1m[35m (4.3ms)[0m  [1m[35mALTER TABLE "alternatives" ADD CONSTRAINT "fk_rails_a400181bf7"
+FOREIGN KEY ("field_id")
+  REFERENCES "fields" ("id")
+[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "bets" ADD CONSTRAINT "fk_rails_1d03c75bf9"
+FOREIGN KEY ("gee_id")
+  REFERENCES "gees" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "bets" ADD CONSTRAINT "fk_rails_87dbfdd206"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "fields" ADD CONSTRAINT "fk_rails_4b617071a0"
+FOREIGN KEY ("gee_id")
+  REFERENCES "gees" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "gees" ADD CONSTRAINT "fk_rails_f346c7c115"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "gees" ADD CONSTRAINT "fk_rails_15bc77e849"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "values" ADD CONSTRAINT "fk_rails_7002061635"
+FOREIGN KEY ("bet_id")
+  REFERENCES "bets" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "values" ADD CONSTRAINT "fk_rails_617cd3cb96"
+FOREIGN KEY ("field_id")
+  REFERENCES "fields" ("id")
+[0m
+  [1m[35m (96.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170428033918)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170427194720),
+(20170427194956),
+(20170427195321),
+(20170427195406),
+(20170427195408),
+(20170427200852),
+(20170427200853);
+
+[0m
+  [1m[35m (66.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-29 05:48:08 UTC], ["updated_at", 2017-04-29 05:48:08 UTC]]
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (66.6ms)[0m  [1m[35mCREATE TABLE "alternatives" ("id" serial primary key, "field_id" integer, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (29.6ms)[0m  [1m[35mCREATE  INDEX  "index_alternatives_on_field_id" ON "alternatives" USING btree ("field_id")[0m
+  [1m[35m (54.2ms)[0m  [1m[35mCREATE TABLE "bets" ("id" serial primary key, "user_id" integer, "gee_id" integer, "quantity" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (32.6ms)[0m  [1m[35mCREATE  INDEX  "index_bets_on_gee_id" ON "bets" USING btree ("gee_id")[0m
+  [1m[35m (37.1ms)[0m  [1m[35mCREATE  INDEX  "index_bets_on_user_id" ON "bets" USING btree ("user_id")[0m
+  [1m[35m (53.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (83.8ms)[0m  [1m[35mCREATE TABLE "fields" ("id" serial primary key, "gee_id" integer, "name" character varying, "ttype" character varying, "min_value" integer, "max_value" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (60.5ms)[0m  [1m[35mCREATE  INDEX  "index_fields_on_gee_id" ON "fields" USING btree ("gee_id")[0m
+  [1m[35m (77.6ms)[0m  [1m[35mCREATE TABLE "gees" ("id" serial primary key, "user_id" integer, "name" character varying, "description" character varying, "category_id" integer, "expiration_date" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (40.5ms)[0m  [1m[35mCREATE  INDEX  "index_gees_on_category_id" ON "gees" USING btree ("category_id")[0m
+  [1m[35m (36.5ms)[0m  [1m[35mCREATE  INDEX  "index_gees_on_user_id" ON "gees" USING btree ("user_id")[0m
+  [1m[35m (81.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (79.9ms)[0m  [1m[35mCREATE TABLE "values" ("id" serial primary key, "bet_id" integer, "field_id" integer, "value" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (63.2ms)[0m  [1m[35mCREATE  INDEX  "index_values_on_bet_id" ON "values" USING btree ("bet_id")[0m
+  [1m[35m (78.7ms)[0m  [1m[35mCREATE  INDEX  "index_values_on_field_id" ON "values" USING btree ("field_id")[0m
+  [1m[35m (5.5ms)[0m  [1m[35mALTER TABLE "alternatives" ADD CONSTRAINT "fk_rails_a400181bf7"
+FOREIGN KEY ("field_id")
+  REFERENCES "fields" ("id")
+[0m
+  [1m[35m (16.5ms)[0m  [1m[35mALTER TABLE "bets" ADD CONSTRAINT "fk_rails_1d03c75bf9"
+FOREIGN KEY ("gee_id")
+  REFERENCES "gees" ("id")
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "bets" ADD CONSTRAINT "fk_rails_87dbfdd206"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "fields" ADD CONSTRAINT "fk_rails_4b617071a0"
+FOREIGN KEY ("gee_id")
+  REFERENCES "gees" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "gees" ADD CONSTRAINT "fk_rails_f346c7c115"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "gees" ADD CONSTRAINT "fk_rails_15bc77e849"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "values" ADD CONSTRAINT "fk_rails_7002061635"
+FOREIGN KEY ("bet_id")
+  REFERENCES "bets" ("id")
+[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "values" ADD CONSTRAINT "fk_rails_617cd3cb96"
+FOREIGN KEY ("field_id")
+  REFERENCES "fields" ("id")
+[0m
+  [1m[35m (96.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170428033918)[0m
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170427194720),
+(20170427194956),
+(20170427195321),
+(20170427195406),
+(20170427195408),
+(20170427200852),
+(20170427200853);
+
+[0m
+  [1m[35m (91.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-29 05:48:09 UTC], ["updated_at", 2017-04-29 05:48:09 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6191653161869772555);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6191653161869772555)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m

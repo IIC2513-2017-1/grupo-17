@@ -25,9 +25,6 @@ development:
   <<: *default
   #database: tecweb-grupo17_development
   database: tecweb
-  username: tecweb
-  password: tecweb
-  host: localhost
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
