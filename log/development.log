@@ -3731,3 +3731,90 @@ Completed 200 OK in 85ms (Views: 76.1ms | ActiveRecord: 2.5ms)
 =======
 >>>>>>> Add Create Gee
 >>>>>>> a67d063
+Started GET "/gees/3" for 127.0.0.1 at 2017-04-29 18:24:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::StatementInvalid (PG::InsufficientPrivilege: ERROR:  permission denied for relation schema_migrations
+: SELECT "schema_migrations".* FROM "schema_migrations"):
+  
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:598:in `async_exec'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:598:in `block in exec_no_cache'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:589:in `block in log'
+activesupport (5.0.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:583:in `log'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:598:in `exec_no_cache'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:585:in `execute_and_clear'
+activerecord (5.0.2) lib/active_record/connection_adapters/postgresql/database_statements.rb:103:in `exec_query'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/database_statements.rb:377:in `select_prepared'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/database_statements.rb:39:in `select_all'
+activerecord (5.0.2) lib/active_record/connection_adapters/abstract/query_cache.rb:95:in `select_all'
+activerecord (5.0.2) lib/active_record/querying.rb:39:in `find_by_sql'
+activerecord (5.0.2) lib/active_record/relation.rb:702:in `exec_queries'
+activerecord (5.0.2) lib/active_record/relation.rb:583:in `load'
+activerecord (5.0.2) lib/active_record/relation.rb:260:in `records'
+activerecord (5.0.2) lib/active_record/relation/delegation.rb:38:in `map'
+activerecord (5.0.2) lib/active_record/migration.rb:1031:in `block in get_all_versions'
+activesupport (5.0.2) lib/active_support/deprecation/reporting.rb:36:in `silence'
+activesupport (5.0.2) lib/active_support/deprecation/instance_delegator.rb:20:in `silence'
+activerecord (5.0.2) lib/active_record/migration.rb:1029:in `get_all_versions'
+activerecord (5.0.2) lib/active_record/migration.rb:1043:in `needs_migration?'
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.6ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6191653161869772555);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6191653161869772555)[0m
+Started GET "/gees/3" for 127.0.0.1 at 2017-04-29 18:29:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GeesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGee Load (0.5ms)[0m  [1m[34mSELECT  "gees".* FROM "gees" WHERE "gees"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering gees/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mField Load (1.7ms)[0m  [1m[34mSELECT "fields".* FROM "fields" WHERE "fields"."gee_id" = $1[0m  [["gee_id", 3]]
+  [1m[36mAlternative Load (0.5ms)[0m  [1m[34mSELECT "alternatives".* FROM "alternatives" WHERE "alternatives"."field_id" = $1[0m  [["field_id", 12]]
+  Rendered gees/show.html.erb within layouts/application (198.8ms)
+Completed 200 OK in 1015ms (Views: 919.8ms | ActiveRecord: 32.9ms)
+
+
