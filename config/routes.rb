@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resources :bets, only: [:new, :create, :index, :show]
   end
   resources :users
-  resources :categories, only: [:new, :create, :destroy]
+
+  # This resources will be used only by administrators
+  resources :categories, only: [:index, :create, :destroy]
 end
