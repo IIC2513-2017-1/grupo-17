@@ -11,8 +11,21 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
+  <strong>Gees:</strong>
+  <ul>
+    <% @user.gees.each do |gee| %>
+      <li><%= gee.name %> | <%= link_to "Show", gee_path(gee.id) %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Bets:</strong>
+  <ul>
+    <% @user.bets.each do |bet| %>
+      <li><%= bet.name %> | <%= link_to "Show", bet_path(bet.id) %></li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

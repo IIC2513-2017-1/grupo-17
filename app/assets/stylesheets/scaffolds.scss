@@ -1,4 +1,26 @@
 body {
+  margin: 0;
+}
+
+#main-menu {
+  background-color: #21BA45;
+  color: white;
+  font-style: italic;
+  height: 40px;
+  div {
+    margin-left: 15px;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    &.right {
+      float: right;
+      margin-right: 15px;
+    }
+  }
+}
+
+#app-body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
