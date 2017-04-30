@@ -7,7 +7,7 @@
 
 <p>
   <strong>Gee:</strong>
-  <%= @bet.gee.name %>
+  <%= @bet.gee.name %> <%= link_to 'Details', gee_path(@gee), class: "button" %>
 </p>
 
 <p>
@@ -28,4 +28,4 @@
   <% end %>
 </p>
 
-<%= link_to 'Back', gee_bets_path(@gee) %>
+<%= link_to 'Back', :back, class: "button" %>

@@ -36,7 +36,7 @@
     <div id="field-list">
       <%= render "field" %>
     </div>
-    <a href="javascript:;" id="add-new-field">Add New Field</a>
+    <a id="add-new-field">Add New Field</a>
   </div>
 
   <div class="actions">
@@ -44,10 +44,10 @@
   </div>
 <% end %>
 
-<div style="display: none;" id="new-field-form">
+<div id="new-field-form" style="display: none">
     <%= render partial: "field" %>
 </div>
 
-<div style="display: none;" id="new-alternative">
+<div id="new-alternative" style="display: none">
     <%= render partial: "alternative" %>
 </div>

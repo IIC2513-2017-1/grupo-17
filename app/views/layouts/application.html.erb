@@ -9,11 +9,11 @@
 
   <body>
     <div id="main-menu">
-      <div><%= link_to "Home", root_path %></div>
+      <div><%= link_to "Home", root_path, class: "button" %></div>
       <div class="right">
-        <%= link_to "View my profile", user_path(1) %>
+        <%= link_to "View my profile", user_path(1), class: "button" %>
          |
-        <%= link_to "Register", new_user_path %>
+        <%= link_to "Register", new_user_path, class: "button" %>
       </div>
     </div>
     <div id="app-body">

@@ -18,7 +18,7 @@
         <td><%= bet.user.username %></td>
         <td><%= bet.gee.name %></td>
         <td><%= bet.quantity %></td>
-        <td><%= link_to 'Show', gee_bet_path(@gee, bet) %></td>
+        <td><%= link_to 'Details', gee_bet_path(@gee, bet), class: "button" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Bet', new_gee_bet_path %>
+<%= link_to 'Back to Gee', gee_path(@gee), class: "button" %>

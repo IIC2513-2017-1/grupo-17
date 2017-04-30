@@ -44,14 +44,10 @@ class BetsController < ApplicationController
       end
     end
 
-    respond_to do |format|
-      if success
-        format.html { redirect_to gee_bet_path(@gee, @bet), notice: 'Bet was successfully created.' }
-        format.json { render :show, status: :created, location: @bet }
-      else
-        format.html { render :new }
-        format.json { render json: @bet.errors, status: :unprocessable_entity }
-      end
+    if success
+      redirect_to gee_bet_path(@gee, @bet), notice: 'Bet was successfully created.'
+    else
+      render :new
     end
   end
 

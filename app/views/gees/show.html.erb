@@ -46,9 +46,8 @@
   <% end %>
 </p>
 
-<%= link_to "BET", new_gee_bet_path(@gee.id), style: "font-size: 50px;" %>
-
+<%= link_to "Create Bet", new_gee_bet_path(@gee), class: "button" %>
+<%= link_to "Current Bets", gee_bets_path(@gee), class: "button" %>
 <br><br>
+<%= link_to "Back to Gees", gees_path, class: "button" %>
 
-<%= link_to 'Edit', edit_gee_path(@gee) %> |
-<%= link_to 'Back', gees_path %>

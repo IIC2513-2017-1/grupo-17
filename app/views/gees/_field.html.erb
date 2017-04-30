@@ -3,12 +3,12 @@
   <%= text_field_tag "field_names[]", nil, placeholder: "Name" %>
   <%= text_field_tag "field_min_values[]", nil, placeholder: "Min. value", class: "field-for-number" %>
   <%= text_field_tag "field_max_values[]", nil, placeholder: "Max. value", class: "field-for-number" %>
-  <a href="javascript:;" class="remove-field-button">X</a>
-  <div class="alternative-form" style="display: none;">
-    <%= text_field_tag "alternative_numbers[]", 1, class: "alternative-number", style: "display: none;" %>
+  <a class="remove-field-button">X</a>
+  <div class="alternative-form" style="display: none">
+    <%= text_field_tag "alternative_numbers[]", 1, class: "alternative-number", style: "display: none"%>
     <div class="alternative-list">
       <%= render "alternative" %>
     </div>
-    <a href="javascript:;" class="add-new-alternative">Add New Alternative</a>
+    <a class="add-new-alternative">Add New Alternative</a>
   </div>
 </div>
