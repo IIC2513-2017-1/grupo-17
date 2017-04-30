@@ -17,10 +17,6 @@ class GeesController < ApplicationController
     @gee = Gee.new
   end
 
-  # GET /gees/1/edit
-  def edit
-  end
-
   # POST /gees
   # POST /gees.json
   def create
@@ -90,30 +86,6 @@ class GeesController < ApplicationController
         format.html { render :new }
         format.json { render json: @gee.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /gees/1
-  # PATCH/PUT /gees/1.json
-  def update
-    respond_to do |format|
-      if @gee.update(gee_params)
-        format.html { redirect_to @gee, notice: 'Gee was successfully updated.' }
-        format.json { render :show, status: :ok, location: @gee }
-      else
-        format.html { render :edit }
-        format.json { render json: @gee.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /gees/1
-  # DELETE /gees/1.json
-  def destroy
-    @gee.destroy
-    respond_to do |format|
-      format.html { redirect_to gees_url, notice: 'Gee was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
