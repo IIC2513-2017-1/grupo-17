@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'gees#index'
 
-  resources :gees do
+  resources :gees, only: [:new, :create, :index, :show] do
     resources :bets, only: [:new, :create, :index, :show]
   end
   resources :users
