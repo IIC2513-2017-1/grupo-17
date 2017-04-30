@@ -1,13 +1,0 @@
-I"(function() {
-  $(function() {
-    return $("#addNewField").on("click", function() {
-      return $("#field_list").append($("#new_field_form").html());
-    });
-  });
-
-  this.removeChoice = function(element) {
-    return element.parent().remove();
-  };
-
-}).call(this);
-:ET
