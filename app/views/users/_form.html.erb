@@ -26,6 +26,13 @@
     <%= f.password_field :password %>
   </div>
 
+  <% if local_assigns.has_key? :is_edit and is_edit %>
+    <div class="field">
+      <%= f.label :is_admin %>
+      <%= f.check_box :is_admin %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
