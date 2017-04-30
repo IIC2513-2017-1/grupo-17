@@ -17,5 +17,7 @@ class Bet < ApplicationRecord
 
   validates :user, presence: true
   validates :gee, presence: true
-  validates :quantity, presence: true
+  validates :quantity, presence: true, numericality: {
+    greater_than: 0
+  }
 end
