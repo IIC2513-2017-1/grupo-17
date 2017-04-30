@@ -13,6 +13,7 @@
 class Bet < ApplicationRecord
   belongs_to :user
   belongs_to :gee
+  has_many :values
 
   validates :user, presence: true
   validates :gee, presence: true

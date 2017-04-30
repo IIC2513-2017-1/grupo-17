@@ -2,12 +2,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @bet.user %>
+  <%= @bet.user.username %>
 </p>
 
 <p>
   <strong>Gee:</strong>
-  <%= @bet.gee %>
+  <%= @bet.gee.name %>
 </p>
 
 <p>
@@ -15,5 +15,17 @@
   <%= @bet.quantity %>
 </p>
 
-<%= link_to 'Edit', edit_bet_path(@bet) %> |
-<%= link_to 'Back', bets_path %>
+<p>
+  <strong>Answer:</strong>
+  <% @bet.values.each do |value| %>
+    <br>
+    + <%= value.field.name %>:
+    <% if value.field.ttype == 'Alternatives' %>
+      <%= value.field.alternatives.find(value.value).value %>
+    <% else %>
+      <%= value.value %>
+    <% end %>
+  <% end %>
+</p>
+
+<%= link_to 'Back', gee_bets_path(@gee) %>

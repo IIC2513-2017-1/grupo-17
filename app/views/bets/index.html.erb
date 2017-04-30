@@ -15,12 +15,10 @@
   <tbody>
     <% @bets.each do |bet| %>
       <tr>
-        <td><%= bet.user %></td>
-        <td><%= bet.gee %></td>
+        <td><%= bet.user.username %></td>
+        <td><%= bet.gee.name %></td>
         <td><%= bet.quantity %></td>
-        <td><%= link_to 'Show', bet %></td>
-        <td><%= link_to 'Edit', edit_bet_path(bet) %></td>
-        <td><%= link_to 'Destroy', bet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', gee_bet_path(@gee, bet) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Bet', new_bet_path %>
+<%= link_to 'New Bet', new_gee_bet_path %>
