@@ -97,6 +97,6 @@ class GeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gee_params
-      params.require(:gee).permit(:user_id, :name, :description, :category_id, :expiration_date)
+      params.require(:gee).permit(:user_id, :name, :description, :category_id, :is_public, :expiration_date)
     end
 end

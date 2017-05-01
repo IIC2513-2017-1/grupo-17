@@ -2,12 +2,10 @@
 #
 # Table name: values
 #
-#  id         :integer          not null, primary key
-#  bet_id     :integer
-#  field_id   :integer
-#  value      :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id       :integer          not null, primary key
+#  bet_id   :integer          not null
+#  field_id :integer          not null
+#  value    :integer          not null
 #
 
 require 'test_helper'

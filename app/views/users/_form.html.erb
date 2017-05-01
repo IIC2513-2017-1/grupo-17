@@ -28,6 +28,11 @@
 
   <% if local_assigns.has_key? :is_edit and is_edit %>
     <div class="field">
+      <%= f.label :money %>
+      <%= f.number_field :money %>
+    </div>
+
+    <div class="field">
       <%= f.label :is_admin %>
       <%= f.check_box :is_admin %>
     </div>

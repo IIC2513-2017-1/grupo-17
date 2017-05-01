@@ -3,12 +3,13 @@
 # Table name: users
 #
 #  id         :integer          not null, primary key
-#  username   :string
-#  email      :string
-#  password   :string
+#  username   :string           not null
+#  email      :string           not null
+#  password   :string           not null
+#  is_admin   :boolean          default("false"), not null
+#  money      :integer          default("0"), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  is_admin   :boolean          default("false")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

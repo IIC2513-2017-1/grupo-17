@@ -2,11 +2,9 @@
 #
 # Table name: alternatives
 #
-#  id         :integer          not null, primary key
-#  field_id   :integer
-#  value      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id       :integer          not null, primary key
+#  field_id :integer          not null
+#  value    :string           not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

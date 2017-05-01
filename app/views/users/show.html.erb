@@ -11,6 +11,16 @@
 </p>
 
 <p>
+  <strong>Money:</strong>
+  <%= @user.money %>
+</p>
+
+<p>
+  <strong>Is admin:</strong>
+  <%= @user.is_admin %>
+</p>
+
+<p>
   <strong>Gees you have created:</strong>
   <ul>
     <% @user.gees.each do |gee| %>

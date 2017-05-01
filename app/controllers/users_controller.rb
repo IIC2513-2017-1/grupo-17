@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      safe_params = user_params.merge params.require(:user).permit(:is_admin)
+      safe_params = user_params.merge params.require(:user).permit(:is_admin, :money)
       if @user.update(safe_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
