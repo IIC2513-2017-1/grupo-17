@@ -1,24 +1,16 @@
-# README
+# Grupo 17 - Gees
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Sitio web
+https://tecweb-grupo17.herokuapp.com
 
-Things you may want to cover:
+## Integrantes
+- Martín De la Fuente
+- Andrés Espinosa
 
-* Ruby version
+## Tema del proyecto
+- Gestor de apuestas
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Introducción a Gees
+Gees es una plataforma donde los usuarios crean sus propias apuestas y 
+las demás personas pueden apostar. A cada una de estas apuestas que crean
+los usuarios se les llama Gee.
