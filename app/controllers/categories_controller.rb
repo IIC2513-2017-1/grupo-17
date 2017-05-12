@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authorize
 
   # GET /categories
   def index

@@ -1,4 +1,5 @@
 class GeesController < ApplicationController
+  before_action :authorize
   before_action :set_gee, only: [:show, :edit, :update, :destroy]
 
   # GET /gees

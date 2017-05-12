@@ -26,6 +26,11 @@
     <%= f.password_field :password %>
   </div>
 
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
   <% if local_assigns.has_key? :is_edit and is_edit %>
     <div class="field">
       <%= f.label :money %>

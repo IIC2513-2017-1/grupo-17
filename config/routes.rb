@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  # Login, logout
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
   root to: 'gees#index'
 
   resources :gees, only: [:new, :create, :index, :show] do

@@ -11,9 +11,15 @@
     <div id="main-menu">
       <div><%= link_to "Home", root_path, class: "button" %></div>
       <div class="right">
-        <%= link_to "View my profile", user_path(1), class: "button" %>
-         |
-        <%= link_to "Register", new_user_path, class: "button" %>
+        <% if current_user %>
+          <%= link_to "View my profile", user_path(current_user), class: "button" %>
+           |
+          <%= link_to "Logout", '/logout', class: "button" %>
+        <% else %>
+          <%= link_to "Login", '/login', class: "button" %>
+           |
+          <%= link_to "Register", new_user_path, class: "button" %>
+        <% end %>
       </div>
     </div>
     <div id="app-body">
