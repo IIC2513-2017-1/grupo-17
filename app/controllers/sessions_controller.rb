@@ -6,11 +6,12 @@ class SessionsController < ApplicationController
     user = User.where('username=:query OR email=:query', query: params[:username]).first
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to '/'
+      redirect_to root_path
     else
-      #TODO: Show error
-      redirect_to '/login'
+      flash[:notice] = 'User doesn\'t exists or the information doesn\'t match'
+      render :new
     end
+
   end
 
   def destroy

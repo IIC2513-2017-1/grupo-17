@@ -8,21 +8,11 @@
   </head>
 
   <body>
-    <div id="main-menu">
-      <div><%= link_to "Home", root_path, class: "button" %></div>
-      <div class="right">
-        <% if current_user %>
-          <%= link_to "View my profile", user_path(current_user), class: "button" %>
-           |
-          <%= link_to "Logout", '/logout', class: "button" %>
-        <% else %>
-          <%= link_to "Login", '/login', class: "button" %>
-           |
-          <%= link_to "Register", new_user_path, class: "button" %>
-        <% end %>
-      </div>
-    </div>
-    <div id="app-body">
+    <%= render 'layouts/navbar.html.erb' %>
+    <div class="container">
+      <% flash.each do |key, value| %>
+          <%= content_tag :div, value, class: "flash #{key}" %>
+      <% end %>
       <%= yield %>
     </div>
 

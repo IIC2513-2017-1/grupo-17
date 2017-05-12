@@ -1,79 +1,4 @@
-body {
-  margin: 0;
-}
 
-#main-menu {
-  background-color: #21BA45;
-  color: white;
-  font-style: italic;
-  height: 40px;
-  div {
-    margin-left: 15px;
-    display: inline-block;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    &.right {
-      float: right;
-      margin-right: 15px;
-    }
-  }
-}
-
-#app-body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
-}
-
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
-}
-
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
-
-th {
-  padding-bottom: 5px;
-}
-
-td {
-  padding-bottom: 7px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
-
-#notice {
-  color: green;
-}
 
 .field_with_errors {
   padding: 2px;
@@ -106,6 +31,3 @@ div {
   }
 }
 
-label {
-  display: block;
-}
