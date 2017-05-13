@@ -19,13 +19,13 @@ class Gee < ApplicationRecord
   belongs_to  :category
   has_many    :fields, dependent: :destroy
 
+  validates :fields,                          length: { minimum: 1 }
   validates :user,            presence: true
   validates :category,        presence: true
   validates :name,            presence: true, uniqueness: true
   validates :expiration_date, presence: true
   validates :state,           presence: true, inclusion: {
       in: %w(opened closed),
-      message: "%{value} is not a valid state"
   }
 
   # The set_defaults will only work if the object is new

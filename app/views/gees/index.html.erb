@@ -12,7 +12,7 @@
       <th>State</th>
       <th>Is public</th>
       <th>Expiration date</th>
-      <th colspan="3"></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -26,7 +26,7 @@
         <td><%= gee.state %></td>
         <td><%= gee.is_public %></td>
         <td><%= gee.expiration_date %></td>
-        <td><%= link_to 'Show', gee %></td>
+        <td><%= link_to 'Show', gee, class: 'button' %></td>
       </tr>
     <% end %>
   </tbody>

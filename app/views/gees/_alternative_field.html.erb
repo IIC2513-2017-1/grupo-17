@@ -1,0 +1,22 @@
+<div id="alternative-field" class="gee-field invisible">
+  <label>Name:</label>
+  <%= text_field_tag 'field_names[]', nil %>
+
+  <label>Alternatives:</label>
+  <%= text_field_tag 'alternative_numbers[]', 1, class: 'invisible alternative-number' %>
+  <div class="alternatives">
+    <div class="alternative">
+      <%= text_field_tag 'alternative_names[]', nil %>
+      <a class="remove-alternative">X</a>
+    </div>
+  </div>
+
+  <a class="button add-alternative">Add alternative</a>
+  <a class="button remove-field">Delete field</a>
+
+  <div class="invisible">
+    <%= text_field_tag 'field_types[]', 'Alternatives' %>
+    <%= text_field_tag 'field_min_values[]', nil %>
+    <%= text_field_tag 'field_max_values[]', nil %>
+  </div>
+</div>

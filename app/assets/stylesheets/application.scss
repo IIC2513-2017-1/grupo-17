@@ -14,8 +14,12 @@
  *= require_self
  */
 
-div, button, a {
+div, button, a, table {
   margin: 8px 0px;
+}
+
+input {
+  margin: 0px 0px 8px 0px;
 }
 
 body {
@@ -29,7 +33,7 @@ label {
 }
 
 table {
-  width: 100%;
+  width: auto;
   border-collapse: collapse;
   tr:nth-of-type(odd) {
     background: #eee;
@@ -47,7 +51,7 @@ table {
 }
 
 nav.navbar {
-  font-size: 20px;
+  font-size: 18px;
   background-color: #2E2F30;
   overflow: hidden;
   ul {
@@ -101,4 +105,8 @@ nav.navbar {
 
 .warning {
   color: red;
+}
+
+.invisible {
+  display: none;
 }
