@@ -1,31 +1,35 @@
-<p id="notice"><%= notice %></p>
+<h2>Bet details</h2>
 
-<p>
-  <strong>User:</strong>
-  <%= @bet.user.username %>
-</p>
-
-<p>
-  <strong>Gee:</strong>
-  <%= @bet.gee.name %> <%= link_to 'Details', gee_path(@gee), class: "button" %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @bet.quantity %>
-</p>
-
-<p>
-  <strong>Answer:</strong>
-  <% @bet.values.each do |value| %>
-    <br>
-    + <%= value.field.name %>:
-    <% if value.field.ttype == 'Alternatives' %>
-      <%= value.field.alternatives.find(value.value).value %>
-    <% else %>
-      <%= value.value %>
-    <% end %>
-  <% end %>
-</p>
+<table>
+  <tr>
+    <td><b>User</b></td>
+    <td><%= @bet.user.username %></td>
+  </tr>
+  <tr>
+    <td><b>Gee</b></td>
+    <td><%= @bet.gee.name %> (<%= link_to 'Details', gee_path(@gee) %>)</td>
+  </tr>
+  <tr>
+    <td><b>Quantity</b></td>
+    <td><%= @bet.quantity %></td>
+  </tr>
+  <tr>
+    <td><b>Answer</b></td>
+    <td>
+      <ul>
+        <% @bet.values.each do |value| %>
+            <li>
+              <%= value.field.name %>:
+              <% if value.field.ttype == 'Alternatives' %>
+                  <%= value.field.alternatives.find(value.value).value %>
+              <% else %>
+                  <%= value.value %>
+              <% end %>
+            </li>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 <%= link_to 'Back to Gees', gees_path, class: "button" %>
