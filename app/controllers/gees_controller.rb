@@ -5,7 +5,7 @@ class GeesController < ApplicationController
   # GET /gees
   # GET /gees.json
   def index
-    @gees = Gee.all
+    @gees = Gee.where(is_public: true)
   end
 
   # GET /gees/1

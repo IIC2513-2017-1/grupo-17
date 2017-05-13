@@ -3,12 +3,19 @@ class BetsController < ApplicationController
 
   # GET gees/:gee_id/bets
   def index
-    @bets = Bet.where(gee: @gee)
+    if @gee.is_public
+      @bets = Bet.where(gee: @gee)
+    else
+      redirect_to '/', error: 'You cannot see bets from non public Gees'
+    end
   end
 
   # GET gees/:gee_id/bets/:id
   def show
     @bet = Bet.find(params[:id])
+    if @bet.user != current_user
+      redirect_to '/', error: 'You cannot see a bet if it is not yours'
+    end
   end
 
   # GET gees/:gee_id/bets/new

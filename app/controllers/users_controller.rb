@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:new, :create]
+  before_action { authorize(admin: true) }, only: [:index]
 
   # GET /users
   # GET /users.json
@@ -11,6 +12,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if !current_user.is_admin && current_user != @user
+      redirect_to '/', error: 'You have no permission to enter that page'
+    end
   end
 
   # GET /users/new
@@ -65,10 +69,14 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
+    if @user == current_user || current_user.is_admin
+      @user.destroy
+      respond_to do |format|
+        format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      format.html { redirect_to '/', error: 'You cannot destroy a user that is not your own' }
     end
   end
 
