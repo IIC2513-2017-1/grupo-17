@@ -31,7 +31,7 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
-  <% if local_assigns.has_key? :is_edit and is_edit %>
+  <% if current_user&.is_admin %>
     <div class="field">
       <%= f.label :money %>
       <%= f.number_field :money %>

@@ -18,7 +18,9 @@ class BetsController < ApplicationController
 
   # POST gees/:gee_id/bets
   def create
-    @bet = Bet.new(bet_params)
+    new_params = bet_params
+    new_params[:user_id] = current_user[:id]
+    @bet = Bet.new(new_params)
     @bet.gee = @gee
 
     values = []

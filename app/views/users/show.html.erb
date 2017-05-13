@@ -38,4 +38,14 @@
   </ul>
 </p>
 
+<p>
+  <% if current_user.is_admin %>
+    <%= link_to 'Show categories', categories_path, class: "button" %>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to 'Edit profile', edit_user_path, class: "button" %>
+</p>
+
 <%= link_to 'Back', :back, class: "button" %>

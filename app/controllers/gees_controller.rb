@@ -21,9 +21,8 @@ class GeesController < ApplicationController
   # POST /gees
   # POST /gees.json
   def create
-    Rails.logger.debug(params.inspect)
     new_params = gee_params
-    new_params[:user_id] = 1
+    new_params[:user_id] = current_user[:id]
     @gee = Gee.new(new_params)
     @fields = []
     types = params[:field_types]
