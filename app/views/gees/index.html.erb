@@ -1,8 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Gees</h1>
+<h1>Find your Gee</h1>
+<%= link_to 'Create New Gee', new_gee_path, class: "button" %>
+<br><br>
 
-<table>
+<div class="card-container">
+  <% @gees.each do |gee| %>
+    <div class="card">
+      <div class="title"><%= gee.name %></div>
+      <p><%= gee.description %></p>
+      <table>
+        <tr>
+          <th>Category</th>
+          <td><%= gee.category.name %></td>
+        </tr>
+        <tr>
+          <th>Bets</th>
+          <td>PENDIENTE</td>
+        </tr>
+        <tr>
+          <th>Category</th>
+          <td>PENDIENTE</td>
+        </tr>
+        <tr>
+          <th>Expiration</th>
+          <td><%= gee.expiration_date %></td>
+        </tr>
+    </div>
+  <% end %>
+</div>
+
+<!-- <table>
   <thead>
     <tr>
       <th>User</th>
@@ -30,8 +58,4 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Gee', new_gee_path, class: "button" %>
+</table> -->

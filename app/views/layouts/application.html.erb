@@ -9,12 +9,12 @@
 
   <body>
     <%= render 'layouts/navbar.html.erb' %>
-    <div class="container">
+    <main class="container">
       <% flash.each do |key, value| %>
           <%= content_tag :div, value, class: "flash #{key}" %>
       <% end %>
       <%= yield %>
-    </div>
+    </main>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>

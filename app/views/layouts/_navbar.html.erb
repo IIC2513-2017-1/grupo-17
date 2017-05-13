@@ -1,9 +1,10 @@
 <nav class="navbar">
   <ul>
-    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Geeble", root_path %></li>
     <% if current_user %>
         <li class="right"><%= link_to "Logout", '/logout' %></li>
         <li class="right"><%= link_to "Profile", user_path(current_user) %></li>
+        <li class="right">Welcome <%= current_user.username %></li>
     <% else %>
         <li class="right"><%= link_to "Register", new_user_path %></li>
         <li class="right"><%= link_to "Login", '/login' %></li>
