@@ -44,6 +44,11 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <% if local_assigns.has_key? :is_edit and is_edit %>
+      <%= f.submit 'Save changes', class: 'button' %>
+    <% else %>
+      <%= f.submit 'Register', class: 'button' %>
+    <% end %>
+    <%= link_to 'Back', :back, class: 'button' %>
   </div>
 <% end %>

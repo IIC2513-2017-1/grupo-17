@@ -1,39 +1,39 @@
-<p id="notice"><%= notice %></p>
+<h2>User details</h2>
+
+<table>
+  <tr>
+    <td><b>Username</b></td>
+    <td><%= @user.username %></td>
+  </tr>
+  <tr>
+    <td><b>Email</b></td>
+    <td><%= @user.email %></td>
+  </tr>
+  <tr>
+    <td><b>Money</b></td>
+    <td><%= @user.money %></td>
+  </tr>
+  <tr>
+    <td><b>Is admin</b></td>
+    <td><%= @user.is_admin %></td>
+  </tr>
+</table>
+<br>
 
 <p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Money:</strong>
-  <%= @user.money %>
-</p>
-
-<p>
-  <strong>Is admin:</strong>
-  <%= @user.is_admin %>
-</p>
-
-<p>
-  <strong>Gees you have created:</strong>
+  <strong>Gees this user has created:</strong>
   <ul>
     <% @user.gees.each do |gee| %>
-      <li><%= gee.name %> | <%= link_to "Show gee", gee_path(gee) %></li>
+      <li><%= gee.name %> (<%= link_to "Show details", gee_path(gee) %>)</li>
     <% end %>
   </ul>
 </p>
 
 <p>
-  <strong>Gees you have participated:</strong>
+  <strong>Gees this user has participated:</strong>
   <ul>
     <% @user.bets.each do |bet| %>
-      <li><%= "#{bet.gee.name} (bet #{bet.quantity})" %> | <%= link_to "Show bet", gee_bet_path(bet.gee, bet) %></li>
+      <li><%= "#{bet.gee.name} (bet #{bet.quantity})" %> (<%= link_to "Show bet", gee_bet_path(bet.gee, bet) %>)</li>
     <% end %>
   </ul>
 </p>

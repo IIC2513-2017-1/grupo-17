@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+div, button, a, table {
+  margin: 8px 0px;
+}
+
+input {
+  margin: 0px 0px 8px 0px;
+}
+
+body {
+  background-color: #F2F2F2;
+  margin: 0;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+
+label {
+  display: block;
+}
+
+table {
+  width: auto;
+  border-collapse: collapse;
+  tr:nth-of-type(odd) {
+    background: #eee;
+  }
+  th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+  }
+  td, th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+}
+
+nav.navbar {
+  font-size: 18px;
+  background-color: #2E2F30;
+  overflow: hidden;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      /* This allow us to arrange list items in a row, without using float */
+      display: inline-block;
+      list-style-type: none;
+      a {
+        color: #CCCCCC;
+        display: block;
+        line-height: 2em;
+        padding: 0.5em 0.5em;
+        text-decoration: none;
+        &:hover {
+          color: #fff;
+          background-color: #000;
+        }
+      }
+      &.right {
+        float: right;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+.button {
+  font-size: 14px;
+  background: #616970;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #616970;
+  color: white;
+  text-decoration: none;
+  margin: 2px;
+  &:hover {
+    background: #616985;
+  }
+}
+
+.container {
+  line-height: 18px;
+  margin: 33px;
+}
+
+.notice {
+  color: green;
+}
+
+.warning {
+  color: red;
+}
+
+.invisible {
+  display: none;
+}

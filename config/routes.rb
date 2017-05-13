@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  # Login, logout
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
-
   root to: 'gees#index'
+
+  get '/login', to: 'sessions#new', as: 'login'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy', as: 'logout'
 
   resources :gees, only: [:new, :create, :index, :show] do
     resources :bets, only: [:new, :create, :index, :show]

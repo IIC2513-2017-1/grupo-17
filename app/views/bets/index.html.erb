@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Bets</h1>
 
 <table>
@@ -8,7 +6,7 @@
       <th>User</th>
       <th>Gee</th>
       <th>Quantity</th>
-      <th colspan="3"></th>
+      <th>Options</th>
     </tr>
   </thead>
 
@@ -18,7 +16,7 @@
         <td><%= bet.user.username %></td>
         <td><%= bet.gee.name %></td>
         <td><%= bet.quantity %></td>
-        <td><%= link_to 'Details', gee_bet_path(@gee, bet), class: "button" %></td>
+        <td><%= link_to 'Details', gee_bet_path(@gee, bet), class: 'button' %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,5 +1,5 @@
 class GeesController < ApplicationController
-  before_action :authorize
+  before_action :authorize, only: [:new, :create]
   before_action :set_gee, only: [:show, :edit, :update, :destroy]
 
   # GET /gees
@@ -26,6 +26,7 @@ class GeesController < ApplicationController
     @gee = Gee.new(new_params)
     @fields = []
     types = params[:field_types]
+    types = [] if types.nil?
     names = params[:field_names]
     min_values = params[:field_min_values]
     max_values = params[:field_max_values]
@@ -56,7 +57,7 @@ class GeesController < ApplicationController
         end
         field.alternatives = @alternatives
       else
-        raise "Type %{types[i]} does not exist"
+        raise "Type #{types[i]} does not exist"
       end
       cur_alternative_number += alternative_numbers[i].to_i
       @fields.push(field)
@@ -81,10 +82,8 @@ class GeesController < ApplicationController
       end
       if success
         format.html { redirect_to @gee, notice: 'Gee was successfully created.' }
-        format.json { render :show, status: :created, location: @gee }
       else
         format.html { render :new }
-        format.json { render json: @gee.errors, status: :unprocessable_entity }
       end
     end
   end

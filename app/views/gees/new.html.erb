@@ -1,5 +1,59 @@
-<h1>New Gee</h1>
+<h1>New gee</h1>
 
-<%= render 'form', gee: @gee %>
+<%= form_for(@gee) do |f| %>
+    <% if @gee.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@gee.errors.count, "error") %> prohibited this gee from being saved:</h2>
 
-<%= link_to 'Back', gees_path, class: "button" %>
+          <ul>
+            <% @gee.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :category_id %>
+      <%= f.select :category_id, Category.all.collect {|c| [c.name, c.id]}, include_blank: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :is_public %>
+      <%= f.check_box :is_public %>
+    </div>
+
+    <div class="field">
+      <%= f.label :expiration_date %>
+      <%= f.date_field :expiration_date %>
+    </div>
+
+
+    <h3>Fields</h3>
+
+    <div id="fields">
+    </div>
+
+    <a id="add-alternative-field" class="button">Add alternative field</a>
+    <a id="add-numeric-field" class="button">Add numeric field</a>
+
+    <br><br>
+
+    <div class="actions">
+      <%= f.submit 'Create Gee', class: 'button' %>
+      <%= link_to 'Back', gees_path, class: "button" %>
+    </div>
+<% end %>
+
+<%= render 'gees/numeric_field.html.erb' %>
+<%= render 'gees/alternative_field.html.erb' %>

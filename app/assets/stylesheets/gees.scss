@@ -1,14 +1,10 @@
 // Place all the styles related to the Gees controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.field-form {
-  border-style: solid;
-  border-width: 2px;
-  border-color: grey;
-}
 
-.field-data {
-  border-style: solid;
-  border-width: 2px;
-  border-color: grey;
+.gee-field {
+  border: 2px solid grey;
+  width: 30%;
+  padding: 10px;
+  margin: 15px 0px;
 }

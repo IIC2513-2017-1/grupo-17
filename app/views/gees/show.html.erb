@@ -1,61 +1,66 @@
-<p id="notice"><%= notice %></p>
+<h2>Gee details</h2>
 
-<p>
-  <strong>User:</strong>
-  <%= @gee.user.username %>
-</p>
+<table>
+  <tr>
+    <td><b>Gee Name</b></td>
+    <td><%= @gee.name %></td>
+  </tr>
+  <tr>
+    <td><b>Description</b></td>
+    <td><%= @gee.description %></td>
+  </tr>
+  <tr>
+    <td><b>Category</b></td>
+    <td><%= @gee.category.name %></td>
+  </tr>
+  <tr>
+    <td><b>State</b></td>
+    <td><%= @gee.state %></td>
+  </tr>
+  <tr>
+    <td><b>Is Public</b></td>
+    <td><%= @gee.is_public %></td>
+  </tr>
+  <tr>
+    <td><b>Expiration Date</b></td>
+    <td><%= @gee.expiration_date %></td>
+  </tr>
+  <tr>
+    <td><b>Created by</b></td>
+    <td><%= @gee.user.username %></td>
+  </tr>
+</table>
 
-<p>
-  <strong>Name:</strong>
-  <%= @gee.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @gee.description %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @gee.category.name %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @gee.state %>
-</p>
-
-<p>
-  <strong>Is public:</strong>
-  <%= @gee.is_public %>
-</p>
-
-<p>
-  <strong>Expiration date:</strong>
-  <%= @gee.expiration_date %>
-</p>
-
-<p>
-  <strong>Fields:</strong>
+<h3><b>Fields</b></h3>
+<table>
+  <thead>
+  <tr>
+    <td><b>Name</b></td>
+    <td><b>Type</b></td>
+    <td><b>Values</b></td>
+  </tr>
+  </thead>
   <% @gee.fields.each do |field| %>
-    <div class="field-data">
-      <strong>Name:</strong> <%= field.name %>
-      <strong>Type:</strong> <%= field.ttype %>
-      <% if field.ttype == 'Number' %>
-        <strong>Min. value:</strong> <%= field.min_value %>
-        <strong>Max. value:</strong> <%= field.max_value %>
-      <% else %>
-        <strong>Alternatives:</strong>
-        <ul>
-          <% field.alternatives.each do |alternative| %>
-            <li><%= alternative.value %></li>
-          <% end %>
-        </ul>
-      <% end %>
-    </div>
+    <tr>
+      <td><%= field.name %></td>
+      <td><%= field.ttype %></td>
+      <td>
+        <% if field.ttype == 'Number' %>
+            One number between: <%= field.min_value %> - <%= field.max_value %>
+        <% else %>
+            One of the following alternatives:
+            <ul>
+              <% field.alternatives.each do |alternative| %>
+                  <li><%= alternative.value %></li>
+              <% end %>
+            </ul>
+        <% end %>
+      </td>
+    </tr>
   <% end %>
-</p>
+</table>
 
+<br>
 <%= link_to "Create Bet", new_gee_bet_path(@gee), class: "button" %>
 <%= link_to "Current Bets", gee_bets_path(@gee), class: "button" %>
 <br><br>
