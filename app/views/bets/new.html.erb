@@ -13,11 +13,6 @@
         </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :user_id %>
-      <%= f.select :user_id, User.all.collect {|c| [c.username, c.id]}, include_blank: true %>
-    </div>
-
     <% @gee.fields.each do |field| %>
         <div class="field-form">
           <%= f.label field.name %>
@@ -31,7 +26,7 @@
 
     <div class="field">
       <%= f.label :quantity %>
-      <%= f.number_field :quantity, min: 0 %>
+      $ <%= f.number_field :quantity, min: 0 %>
     </div>
 
     <div class="actions">

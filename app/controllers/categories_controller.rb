@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :authorize
+  before_action { authorize admin: true }
 
   # GET /categories
   def index
