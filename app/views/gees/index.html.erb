@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Find your Gee</h1>
-<%= link_to 'Create New Gee', new_gee_path, class: "button" %>
-<br><br>
 
-<div class="card-container">
+<div>
+  <%= link_to 'Create New Gee', new_gee_path, class: "button" %>
+  <br><br>
   <% @gees.each do |gee| %>
     <div class="card">
       <div class="title"><%= gee.name %></div>
@@ -19,13 +19,15 @@
           <td>PENDIENTE</td>
         </tr>
         <tr>
-          <th>Category</th>
+          <th>Money Well</th>
           <td>PENDIENTE</td>
         </tr>
         <tr>
           <th>Expiration</th>
           <td><%= gee.expiration_date %></td>
         </tr>
+      </table>
+      <%= link_to 'Show details', gee_path(gee), class: "button" %>
     </div>
   <% end %>
 </div>

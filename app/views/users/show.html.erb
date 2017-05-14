@@ -1,51 +1,53 @@
-<h2>User details</h2>
+<div class="centered">
+  <h2>User details</h2>
 
-<table>
-  <tr>
-    <td><b>Username</b></td>
-    <td><%= @user.username %></td>
-  </tr>
-  <tr>
-    <td><b>Email</b></td>
-    <td><%= @user.email %></td>
-  </tr>
-  <tr>
-    <td><b>Money</b></td>
-    <td><%= @user.money %></td>
-  </tr>
-  <tr>
-    <td><b>Is admin</b></td>
-    <td><%= @user.is_admin %></td>
-  </tr>
-</table>
-<br>
+  <table>
+    <tr>
+      <td><b>Username</b></td>
+      <td><%= @user.username %></td>
+    </tr>
+    <tr>
+      <td><b>Email</b></td>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <td><b>Money</b></td>
+      <td><%= @user.money %></td>
+    </tr>
+    <tr>
+      <td><b>Is admin</b></td>
+      <td><%= @user.is_admin %></td>
+    </tr>
+  </table>
+  <br>
 
-<p>
-  <strong>Gees this user has created:</strong>
-  <ul>
-    <% @user.gees.each do |gee| %>
-      <li><%= gee.name %> (<%= link_to "Show details", gee_path(gee) %>)</li>
+  <p>
+    <strong>Gees this user has created:</strong>
+    <ul>
+      <% @user.gees.each do |gee| %>
+        <li><%= gee.name %> (<%= link_to "Show details", gee_path(gee) %>)</li>
+      <% end %>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Gees this user has participated:</strong>
+    <ul>
+      <% @user.bets.each do |bet| %>
+        <li><%= "#{bet.gee.name} (bet #{bet.quantity})" %> (<%= link_to "Show bet", gee_bet_path(bet.gee, bet) %>)</li>
+      <% end %>
+    </ul>
+  </p>
+
+  <p>
+    <% if current_user.is_admin %>
+      <%= link_to 'Show categories', categories_path, class: "button" %>
     <% end %>
-  </ul>
-</p>
+  </p>
 
-<p>
-  <strong>Gees this user has participated:</strong>
-  <ul>
-    <% @user.bets.each do |bet| %>
-      <li><%= "#{bet.gee.name} (bet #{bet.quantity})" %> (<%= link_to "Show bet", gee_bet_path(bet.gee, bet) %>)</li>
-    <% end %>
-  </ul>
-</p>
+  <p>
+    <%= link_to 'Edit profile', edit_user_path, class: "button" %>
+  </p>
 
-<p>
-  <% if current_user.is_admin %>
-    <%= link_to 'Show categories', categories_path, class: "button" %>
-  <% end %>
-</p>
-
-<p>
-  <%= link_to 'Edit profile', edit_user_path, class: "button" %>
-</p>
-
-<%= link_to 'Back', :back, class: "button" %>
+  <%= link_to 'Back', :back, class: "button" %>
+</div>
