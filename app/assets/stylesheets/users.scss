@@ -2,9 +2,27 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$profile-picture-width: 250px;
+$profile-picture-height: 250px;
+
 #user-info {
-  img {
-    height: 250px;
+  .image-holder {
+    display: inline-block;
+    width: $profile-picture-width;
+    height: $profile-picture-height;
+    position: relative;
+  }
+  .image-holder:before {
+    content:"";
+    display: block;
+  }
+  .image-holder img {
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $profile-picture-width;
+    height: $profile-picture-height;
   }
 }
 
