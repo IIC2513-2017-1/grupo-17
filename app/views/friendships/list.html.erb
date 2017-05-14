@@ -1,0 +1,5 @@
+<% @requesters.each do |requester| %>
+  <%= requester.username %>
+  <%= link_to 'Accept', "/friends/accept/#{requester.id}", method: 'post', class: "button" %>
+  <%= link_to 'Reject', "/friends/#{requester.id}", method: 'delete', class: "button" %>
+<% end %>

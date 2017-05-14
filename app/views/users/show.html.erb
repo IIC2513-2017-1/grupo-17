@@ -7,9 +7,19 @@
     <div id="user-title">
       <h1>
         <%= @user.username %>
-        <% if current_user.is_admin %> (Admin) <% end %>
+        <% if @user.is_admin %> (Admin) <% end %>
       </h1>
-      <%= link_to 'Edit profile', edit_user_path, class: "button" %>
+      <% if @my_profile %>
+        <%= link_to 'Edit profile', edit_user_path, class: "button" %>
+      <% else %>
+        <% if @friendship_status == 'not_friends' %>
+          <%= link_to 'Add friend', "/friends/#{@user.id}", method: 'post', class: "button" %>
+        <% elsif @friendship_status == 'pending_request' %>
+          <span class="button">Pending friendship request</span>
+        <% else %>
+          <%= link_to 'Remove friend', "/friends/#{@user.id}", method: 'delete', class: "button" %>
+        <% end %>
+      <% end %>
     </div>
 
     <table>
@@ -22,6 +32,10 @@
         <td>$ <%= @user.money %></td>
       </tr>
     </table>
+    <% if @my_profile %>
+      <%= link_to 'Find friends', users_path, class: "button" %>
+      <%= link_to 'Who wants to be my friend?', '/friends', class: "button" %>
+    <% end %>
     <% if current_user.is_admin %>
       <p>
         <%= link_to 'Show categories', categories_path, class: "button" %>
@@ -33,6 +47,7 @@
 <button type="button" name="button" class="active button" id="gees-container-button">Gees</button>
 <button type="button" name="button" class="button" id="bets-container-button">Bets</button>
 <div id="gees-container">
+  <%= if @user.gees.empty? then 'No Gees' end %>
   <% @user.gees.each do |gee| %>
     <div class="card">
       <div class="title"><%= gee.name %></div>
@@ -61,6 +76,7 @@
 </div>
 
 <div id="bets-container" style="display: none;">
+  <%= if @user.gees.empty? then 'No bets' end %>
   <% @user.bets.each do |bet| %>
     <div class="card">
       <div class="title"><%= bet.gee.name %></div>

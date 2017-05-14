@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:new, :create]
-  before_action(only: [:index]) { authorize(admin: true) }
 
   # GET /users
   # GET /users.json
@@ -12,8 +11,15 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if !current_user.is_admin && current_user != @user
-      redirect_to '/', error: 'You have no permission to enter that page'
+    @my_profile = @user==current_user
+    friendship = Friendship.where('user_id=:user AND friend_id=:friend OR user_id=:friend AND friend_id=:user',
+      user: current_user, friend: @user).first
+    if !friendship
+      @friendship_status = 'not_friends'
+    elsif !friendship.confirmed
+      @friendship_status = 'pending_request'
+    else
+      @friendship_status = 'friends'
     end
   end
 

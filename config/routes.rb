@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
+  get '/friends', to: 'friendships#list'
+  post '/friends/:user_id', to: 'friendships#send_request'
+  post '/friends/accept/:user_id', to: 'friendships#accept_request'
+  delete '/friends/:user_id', to: 'friendships#destroy'
+
   resources :gees, only: [:new, :create, :index, :show] do
     resources :bets, only: [:new, :create, :index, :show]
   end

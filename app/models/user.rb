@@ -17,6 +17,8 @@ class User < ApplicationRecord
 
   has_many :gees, dependent: :destroy
   has_many :bets, dependent: :destroy
+  has_many :friendships
+  has_many :friends, through: :friendships
 
   validates :username, presence: true, length: { in: 4..16 }, uniqueness: true
   validates :password_digest, presence: true
