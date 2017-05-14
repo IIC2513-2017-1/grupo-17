@@ -1,68 +1,66 @@
-<h2>Gee details</h2>
+<div class="centered">
+  <h1><%= @gee.name %></h1>
+  <p><%= @gee.description %></p>
 
-<table>
-  <tr>
-    <td><b>Gee Name</b></td>
-    <td><%= @gee.name %></td>
-  </tr>
-  <tr>
-    <td><b>Description</b></td>
-    <td><%= @gee.description %></td>
-  </tr>
-  <tr>
-    <td><b>Category</b></td>
-    <td><%= @gee.category.name %></td>
-  </tr>
-  <tr>
-    <td><b>State</b></td>
-    <td><%= @gee.state %></td>
-  </tr>
-  <tr>
-    <td><b>Is Public</b></td>
-    <td><%= @gee.is_public %></td>
-  </tr>
-  <tr>
-    <td><b>Expiration Date</b></td>
-    <td><%= @gee.expiration_date %></td>
-  </tr>
-  <tr>
-    <td><b>Created by</b></td>
-    <td><%= @gee.user.username %></td>
-  </tr>
-</table>
-
-<h3><b>Fields</b></h3>
-<table>
-  <thead>
-  <tr>
-    <td><b>Name</b></td>
-    <td><b>Type</b></td>
-    <td><b>Values</b></td>
-  </tr>
-  </thead>
-  <% @gee.fields.each do |field| %>
+  <table>
     <tr>
-      <td><%= field.name %></td>
-      <td><%= field.ttype %></td>
-      <td>
-        <% if field.ttype == 'Number' %>
-            One number between: <%= field.min_value %> - <%= field.max_value %>
-        <% else %>
-            One of the following alternatives:
-            <ul>
-              <% field.alternatives.each do |alternative| %>
-                  <li><%= alternative.value %></li>
-              <% end %>
-            </ul>
-        <% end %>
-      </td>
+      <td><b>Category</b></td>
+      <td><%= @gee.category.name %></td>
     </tr>
-  <% end %>
-</table>
+    <tr>
+      <td><b>Expiration Date</b></td>
+      <td><%= @gee.expiration_date %></td>
+    </tr>
+    <tr>
+      <td><b>State</b></td>
+      <td><%= @gee.state %></td>
+    </tr>
+    <tr>
+      <td><b>Is Public</b></td>
+      <td><%= @gee.is_public %></td>
+    </tr>
+    <tr>
+      <td><b>Created by</b></td>
+      <td><%= @gee.user.username %></td>
+    </tr>
+    <tr>
+      <td><b>Creation date</b></td>
+      <td><%= @gee.created_at %></td>
+    </tr>
+  </table>
 
-<br>
-<%= link_to "Create Bet", new_gee_bet_path(@gee), class: "button" %>
-<%= link_to "Current Bets", gee_bets_path(@gee), class: "button" %>
-<br><br>
-<%= link_to "Back to Gees", gees_path, class: "button" %>
+  <h3><b>Fields</b></h3>
+  <table>
+    <thead>
+    <tr>
+      <td><b>Name</b></td>
+      <td><b>Type</b></td>
+      <td><b>Values</b></td>
+    </tr>
+    </thead>
+    <% @gee.fields.each do |field| %>
+      <tr>
+        <td><%= field.name %></td>
+        <td><%= field.ttype %></td>
+        <td>
+          <% if field.ttype == 'Number' %>
+              One number between: <%= field.min_value %> - <%= field.max_value %>
+          <% else %>
+              One of the following alternatives:
+              <ul>
+                <% field.alternatives.each do |alternative| %>
+                    <li><%= alternative.value %></li>
+                <% end %>
+              </ul>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 
+  <br>
+  <%= link_to "Create Bet", new_gee_bet_path(@gee), class: "button" %>
+  <%= link_to "Current Bets", gee_bets_path(@gee), class: "button" %>
+  <br><br>
+  <%= link_to "Back to Gees", gees_path, class: "button" %>
+</div>

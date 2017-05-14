@@ -1,37 +1,39 @@
-<h1>New Bet</h1>
+<div class="centered">
+  <h1>New Bet</h1>
 
-<%= form_for(@bet, url: {action: "create"}) do |f| %>
-    <% if @bet.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@bet.errors.count, "error") %> prohibited this @bet from being saved:</h2>
+  <%= form_for(@bet, url: {action: "create"}) do |f| %>
+      <% if @bet.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@bet.errors.count, "error") %> prohibited this @bet from being saved:</h2>
 
-          <ul>
-            <% @bet.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
+            <ul>
+              <% @bet.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <% @gee.fields.each do |field| %>
+          <div class="field-form">
+            <%= f.label field.name %>
+            <% if field.ttype == 'Alternatives' %>
+                <%= select_tag "field_#{field.id}", options_from_collection_for_select(field.alternatives, :id, :value) %>
+            <% else %>
+                <%= number_field_tag "field_#{field.id}", field.min_value, min: field.min_value, max: field.max_value %>
             <% end %>
-          </ul>
-        </div>
-    <% end %>
+          </div>
+      <% end %>
 
-    <% @gee.fields.each do |field| %>
-        <div class="field-form">
-          <%= f.label field.name %>
-          <% if field.ttype == 'Alternatives' %>
-              <%= select_tag "field_#{field.id}", options_from_collection_for_select(field.alternatives, :id, :value) %>
-          <% else %>
-              <%= number_field_tag "field_#{field.id}", field.min_value, min: field.min_value, max: field.max_value %>
-          <% end %>
-        </div>
-    <% end %>
+      <div class="field">
+        <%= f.label :quantity %>
+        $ <%= f.number_field :quantity, min: 0 %>
+      </div>
 
-    <div class="field">
-      <%= f.label :quantity %>
-      $ <%= f.number_field :quantity, min: 0 %>
-    </div>
+      <div class="actions">
+        <%= f.submit 'Create Bet', class: 'button' %>
+      </div>
+  <% end %>
 
-    <div class="actions">
-      <%= f.submit 'Create Bet', class: 'button' %>
-    </div>
-<% end %>
-
-<%= link_to 'Back to Gee', gee_path(@gee), class: 'button' %>
+  <%= link_to 'Back to Gee', gee_path(@gee), class: 'button' %>
+</div>
