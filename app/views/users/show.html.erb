@@ -1,53 +1,89 @@
-<div class="centered">
-  <h2>User details</h2>
+<div id="user-info">
+  <img src="https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg" alt="Profile picture" />
 
-  <table>
-    <tr>
-      <td><b>Username</b></td>
-      <td><%= @user.username %></td>
-    </tr>
-    <tr>
-      <td><b>Email</b></td>
-      <td><%= @user.email %></td>
-    </tr>
-    <tr>
-      <td><b>Money</b></td>
-      <td><%= @user.money %></td>
-    </tr>
-    <tr>
-      <td><b>Is admin</b></td>
-      <td><%= @user.is_admin %></td>
-    </tr>
-  </table>
-  <br>
+  <div id="user-details">
+    <div id="user-title">
+      <h1>
+        <%= @user.username %>
+        <% if current_user.is_admin %> (Admin) <% end %>
+      </h1>
+      <%= link_to 'Edit profile', edit_user_path, class: "button" %>
+    </div>
 
-  <p>
-    <strong>Gees this user has created:</strong>
-    <ul>
-      <% @user.gees.each do |gee| %>
-        <li><%= gee.name %> (<%= link_to "Show details", gee_path(gee) %>)</li>
-      <% end %>
-    </ul>
-  </p>
-
-  <p>
-    <strong>Gees this user has participated:</strong>
-    <ul>
-      <% @user.bets.each do |bet| %>
-        <li><%= "#{bet.gee.name} (bet #{bet.quantity})" %> (<%= link_to "Show bet", gee_bet_path(bet.gee, bet) %>)</li>
-      <% end %>
-    </ul>
-  </p>
-
-  <p>
+    <table>
+      <tr>
+        <td><b>Email</b></td>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <td><b>Money</b></td>
+        <td>$ <%= @user.money %></td>
+      </tr>
+    </table>
     <% if current_user.is_admin %>
-      <%= link_to 'Show categories', categories_path, class: "button" %>
+      <p>
+        <%= link_to 'Show categories', categories_path, class: "button" %>
+      </p>
     <% end %>
-  </p>
-
-  <p>
-    <%= link_to 'Edit profile', edit_user_path, class: "button" %>
-  </p>
-
-  <%= link_to 'Back', :back, class: "button" %>
+  </div>
 </div>
+
+<button type="button" name="button" class="active button" id="gees-container-button">Gees</button>
+<button type="button" name="button" class="button" id="bets-container-button">Bets</button>
+<div id="gees-container">
+  <% @user.gees.each do |gee| %>
+    <div class="card">
+      <div class="title"><%= gee.name %></div>
+      <p><%= gee.description %></p>
+      <table>
+        <tr>
+          <th>Category</th>
+          <td><%= gee.category.name %></td>
+        </tr>
+        <tr>
+          <th>Bets</th>
+          <td>PENDIENTE</td>
+        </tr>
+        <tr>
+          <th>Money Well</th>
+          <td>PENDIENTE</td>
+        </tr>
+        <tr>
+          <th>Expiration</th>
+          <td><%= gee.expiration_date %></td>
+        </tr>
+      </table>
+      <%= link_to 'Show details', gee_path(gee), class: "button" %>
+    </div>
+  <% end %>
+</div>
+
+<div id="bets-container" style="display: none;">
+  <% @user.bets.each do |bet| %>
+    <div class="card">
+      <div class="title"><%= bet.gee.name %></div>
+      <p>$ <%= bet.quantity %></p>
+      <%= link_to 'Show details', gee_bet_path(bet), class: "button" %>
+    </div>
+  <% end %>
+</div>
+
+<!-- <p>
+  <strong>Gees this user has created:</strong>
+  <ul>
+    <% @user.gees.each do |gee| %>
+      <li><%= gee.name %> (<%= link_to "Show details", gee_path(gee) %>)</li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Gees this user has participated:</strong>
+  <ul>
+    <% @user.bets.each do |bet| %>
+      <li><%= "#{bet.gee.name} (bet #{bet.quantity})" %> (<%= link_to "Show bet", gee_bet_path(bet.gee, bet) %>)</li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Back', :back, class: "button" %> -->
