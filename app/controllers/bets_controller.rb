@@ -7,7 +7,7 @@ class BetsController < ApplicationController
     if @gee.is_public
       @bets = Bet.where(gee: @gee)
     else
-      redirect_to '/', error: 'You cannot see bets from non public Gees'
+      redirect_to gee_path(@gee), alert: 'You cannot see bets from non public Gees'
     end
   end
 
@@ -15,7 +15,7 @@ class BetsController < ApplicationController
   def show
     @bet = Bet.find(params[:id])
     if @bet.user != current_user
-      redirect_to '/', error: 'You cannot see a bet if it is not yours'
+      redirect_to gee_bets_path(@gee), alert: 'You cannot see a bet if it is not yours'
     end
   end
 

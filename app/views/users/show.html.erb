@@ -62,11 +62,11 @@
         </tr>
         <tr>
           <th>Bets</th>
-          <td>PENDIENTE</td>
+          <td><%= gee.bets.count %></td>
         </tr>
         <tr>
           <th>Money Well</th>
-          <td>PENDIENTE</td>
+          <td><%= gee.bets.map { |bet| bet.quantity }.sum %></td>
         </tr>
         <tr>
           <th>Expiration</th>
