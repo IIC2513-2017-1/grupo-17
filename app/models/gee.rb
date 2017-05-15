@@ -18,8 +18,9 @@ class Gee < ApplicationRecord
   belongs_to  :user
   belongs_to  :category
   has_many    :fields, dependent: :destroy
+  has_many    :bets, dependent: :destroy
 
-  validates :fields,                          length: { minimum: 1 }
+  #validates :fields,                          length: { minimum: 1 }
   validates :user,            presence: true
   validates :category,        presence: true
   validates :name,            presence: true, uniqueness: true
