@@ -1,27 +1,26 @@
-<h1>Bets</h1>
+<div class="container">
+  <h2>Bets for <%= @gee.name %></h2>
 
-<table>
-  <thead>
+  <table>
+    <thead>
     <tr>
       <th>User</th>
-      <th>Gee</th>
       <th>Quantity</th>
       <th>Options</th>
     </tr>
-  </thead>
-
-  <tbody>
+    </thead>
+    <tbody>
     <% @bets.each do |bet| %>
-      <tr>
-        <td><%= bet.user.username %></td>
-        <td><%= bet.gee.name %></td>
-        <td><%= bet.quantity %></td>
-        <td><%= link_to 'Details', gee_bet_path(@gee, bet), class: 'button' %></td>
-      </tr>
+        <tr>
+          <td><%= bet.user.username %></td>
+          <td><%= bet.quantity %></td>
+          <td><%= link_to 'Details', gee_bet_path(@gee, bet), class: 'button' %></td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<%= link_to 'Back to Gee', gee_path(@gee), class: "button" %>
+  <%= link_to 'Back to Gee', gee_path(@gee), class: 'button' %>
+</div>

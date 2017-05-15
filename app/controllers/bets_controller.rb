@@ -28,8 +28,15 @@ class BetsController < ApplicationController
   def create
     new_params = bet_params
     new_params[:user_id] = current_user[:id]
+
     @bet = Bet.new(new_params)
     @bet.gee = @gee
+
+    if current_user.money < new_params[:quantity].to_i
+      flash.now[:alert] = 'You don\'t have enough money.'
+      render :new
+      return
+    end
 
     values = []
     @gee.fields.each do |field|
@@ -48,6 +55,8 @@ class BetsController < ApplicationController
           value.save!
         end
         @bet.save!
+        current_user.money -= @bet.quantity
+        current_user.save!
         success = true
       rescue
         raise ActiveRecord::Rollback

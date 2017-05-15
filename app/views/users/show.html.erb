@@ -73,7 +73,7 @@
           <td><%= gee.expiration_date %></td>
         </tr>
       </table>
-      <%= link_to 'Show details', gee_path(gee), class: "button" %>
+      <%= link_to 'Show details', gee_path(gee), class: 'button' %>
     </div>
   <% end %>
 </div>
@@ -84,7 +84,7 @@
     <div class="card">
       <div class="title"><%= bet.gee.name %></div>
       <p>$ <%= bet.quantity %></p>
-      <%= link_to 'Show details', gee_bet_path(bet), class: "button" %>
+      <%= link_to 'Show details', gee_bet_path(bet.gee, bet), class: 'button' %>
     </div>
   <% end %>
 </div>
