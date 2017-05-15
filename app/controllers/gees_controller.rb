@@ -1,15 +1,14 @@
 class GeesController < ApplicationController
-  before_action :authorize, only: [:new, :create]
   before_action :set_gee, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:new, :create]
+
 
   # GET /gees
-  # GET /gees.json
   def index
     @gees = Gee.where(is_public: true)
   end
 
   # GET /gees/1
-  # GET /gees/1.json
   def show
   end
 
@@ -19,7 +18,6 @@ class GeesController < ApplicationController
   end
 
   # POST /gees
-  # POST /gees.json
   def create
     new_params = gee_params
     new_params[:user_id] = current_user[:id]

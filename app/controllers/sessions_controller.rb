@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     #TODO: Show message
-    redirect_to '/login'
+    redirect_to login_path
   end
 end

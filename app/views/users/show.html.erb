@@ -9,15 +9,16 @@
         <%= @user.username %>
         <% if @user.is_admin %> (Admin) <% end %>
       </h1>
-      <% if @my_profile %>
-        <%= link_to 'Edit profile', edit_user_path, class: "button" %>
-      <% else %>
+      <% if @user == current_user or current_user&.is_admin %>
+        <%= link_to 'Edit profile', edit_user_path, class: 'button' %>
+      <% end %>
+      <% if @user != current_user %>
         <% if @friendship_status == 'not_friends' %>
-          <%= link_to 'Add friend', "/friends/#{@user.id}", method: 'post', class: "button" %>
+          <%= link_to 'Add friend', friend_path(@user), method: 'post', class: 'button' %>
         <% elsif @friendship_status == 'pending_request' %>
           <span class="button">Pending friendship request</span>
-        <% else %>
-          <%= link_to 'Remove friend', "/friends/#{@user.id}", method: 'delete', class: "button" %>
+        <% elsif @friendship_status == 'friends' %>
+          <%= link_to 'Remove friend', friend_path(@user), method: 'delete', class: 'button' %>
         <% end %>
       <% end %>
     </div>
@@ -32,22 +33,24 @@
         <td>$ <%= @user.money %></td>
       </tr>
     </table>
-    <% if @my_profile %>
-      <%= link_to 'Find friends', users_path, class: "button" %>
-      <%= link_to 'Who wants to be my friend?', '/friends', class: "button" %>
+    <% if @user == current_user %>
+      <%= link_to 'Find friends', users_path, class: 'button' %>
+      <%= link_to 'Who wants to be my friend?', friends_path, class: 'button' %>
     <% end %>
-    <% if current_user.is_admin %>
-      <p>
-        <%= link_to 'Show categories', categories_path, class: "button" %>
-      </p>
+    <% if current_user&.is_admin and @user == current_user %>
+      <h3>Site administration</h3>
+        <p>
+          <%= link_to 'Show categories', categories_path, class: 'button' %>
+        </p>
     <% end %>
   </div>
 </div>
 
 <button type="button" name="button" class="active button" id="gees-container-button">Gees</button>
 <button type="button" name="button" class="button" id="bets-container-button">Bets</button>
+
 <div id="gees-container">
-  <%= if @user.gees.empty? then 'No Gees' end %>
+  <%= 'No Gees' unless @user.gees.present? %>
   <% @user.gees.each do |gee| %>
     <div class="card">
       <div class="title"><%= gee.name %></div>
@@ -76,7 +79,7 @@
 </div>
 
 <div id="bets-container" style="display: none;">
-  <%= if @user.gees.empty? then 'No bets' end %>
+  <%= 'No Bets' unless @user.bets.present? %>
   <% @user.bets.each do |bet| %>
     <div class="card">
       <div class="title"><%= bet.gee.name %></div>
@@ -85,23 +88,3 @@
     </div>
   <% end %>
 </div>
-
-<!-- <p>
-  <strong>Gees this user has created:</strong>
-  <ul>
-    <% @user.gees.each do |gee| %>
-      <li><%= gee.name %> (<%= link_to "Show details", gee_path(gee) %>)</li>
-    <% end %>
-  </ul>
-</p>
-
-<p>
-  <strong>Gees this user has participated:</strong>
-  <ul>
-    <% @user.bets.each do |bet| %>
-      <li><%= "#{bet.gee.name} (bet #{bet.quantity})" %> (<%= link_to "Show bet", gee_bet_path(bet.gee, bet) %>)</li>
-    <% end %>
-  </ul>
-</p>
-
-<%= link_to 'Back', :back, class: "button" %> -->

@@ -1,5 +1,6 @@
 class FriendshipsController < ApplicationController
   before_action :set_user, only: [:send_request, :accept_request, :destroy]
+  before_action :require_login
 
   def list
     @requesters = User.joins("INNER JOIN friendships ON users.id=friendships.user_id")

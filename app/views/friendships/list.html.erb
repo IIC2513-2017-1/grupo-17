@@ -1,5 +1,10 @@
+<% if @requesters.present? %>
+  <h3>Friendship requests:</h3>
+<% else %>
+  <h3>You don't have any friendship request.</h3>
+<% end %>
 <% @requesters.each do |requester| %>
   <%= requester.username %>
-  <%= link_to 'Accept', "/friends/accept/#{requester.id}", method: 'post', class: "button" %>
-  <%= link_to 'Reject', "/friends/#{requester.id}", method: 'delete', class: "button" %>
+  <%= link_to 'Accept', friend_accept_path(requester), method: 'post', class: 'button' %>
+  <%= link_to 'Reject', friend_path(requester), method: 'delete', class: 'button' %>
 <% end %>

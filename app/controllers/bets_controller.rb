@@ -1,5 +1,6 @@
 class BetsController < ApplicationController
-  before_action :set_gee, :authorize
+  before_action :set_gee
+  before_action :require_login, only: [:new, :create]
 
   # GET gees/:gee_id/bets
   def index
