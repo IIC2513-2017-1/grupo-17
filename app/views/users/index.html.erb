@@ -3,9 +3,9 @@
 <table>
   <thead>
     <tr>
+      <th>Avatar</th>
       <th>Username</th>
       <th>Email</th>
-      <th>Password</th>
       <th>Money</th>
       <th>Is Admin</th>
       <th>Options</th>
@@ -15,9 +15,9 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= image_tag(user.avatar.url(:thumb), class: "avatar-thumb-img") %></td>
         <td><%= user.username %></td>
         <td><%= user.email %></td>
-        <td><%= user.password %></td>
         <td><%= user.money %></td>
         <td><%= user.is_admin %></td>
         <td>

@@ -2,14 +2,22 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$profile-picture-width: 250px;
-$profile-picture-height: 250px;
+$avatar-medium-width: 250px;
+$avatar-medium-height: 250px;
+$avatar-thumb-width: 50px;
+$avatar-thumb-height: 50px;
+
+.avatar-thumb-img {
+  width: $avatar-thumb-width;
+  height: $avatar-thumb-height;
+  border-radius: 50%;
+}
 
 #user-info {
   .image-holder {
     display: inline-block;
-    width: $profile-picture-width;
-    height: $profile-picture-height;
+    width: $avatar-medium-width;
+    height: $avatar-medium-height;
     position: relative;
   }
   .image-holder:before {
@@ -21,8 +29,8 @@ $profile-picture-height: 250px;
     position: absolute;
     top: 0;
     left: 0;
-    width: $profile-picture-width;
-    height: $profile-picture-height;
+    width: $avatar-medium-width;
+    height: $avatar-medium-height;
   }
 }
 
