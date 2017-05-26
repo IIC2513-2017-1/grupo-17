@@ -4,6 +4,11 @@
     <% if current_user %>
         <li class="right"><%= link_to 'Logout', logout_path %></li>
         <li class="right"><%= link_to 'Profile', user_path(current_user) %></li>
+        <li class="right">
+          <%= link_to fa_icon("bell",
+            class: "badge",
+            data: {badge: current_user.notifications.where(read: false).count.to_s}), '/notifications' %>
+        </li>
         <li class="right"><a>Welcome <%= current_user.username %></a></li>
     <% else %>
         <li class="right"><%= link_to 'Register', new_user_path %></li>

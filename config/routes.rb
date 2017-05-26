@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post   '/friends/accept/:user_id', to: 'friendships#accept_request', as: 'friend_accept'
   delete '/friends/:user_id',        to: 'friendships#destroy'
 
+  get '/notifications', to: 'notifications#index'
+
   resources :gees, only: [:new, :create, :index, :show] do
     resources :bets, only: [:new, :create, :index, :show]
   end
