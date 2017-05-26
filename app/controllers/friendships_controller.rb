@@ -3,6 +3,10 @@ class FriendshipsController < ApplicationController
   before_action :require_login
 
   def list
+    @friends = current_user.friends
+  end
+
+  def list_requests
     @requesters = User.joins("INNER JOIN friendships ON users.id=friendships.user_id")
       .where(friendships: { confirmed: false, friend: current_user })
   end
@@ -12,6 +16,10 @@ class FriendshipsController < ApplicationController
 
     respond_to do |format|
       if friendship.save
+        @user.notifications.create(
+          title: 'Friend request',
+          description: "#{current_user.username} wants to be your friend",
+          url: '/friends/requests')
         format.html { redirect_back fallback_location: '/', notice: 'Your request was sent.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -26,6 +34,9 @@ class FriendshipsController < ApplicationController
 
     respond_to do |format|
       if friendship.save
+        @user.notifications.create(
+          title: 'Friendship accepted',
+          description: "You and #{current_user.username} are now friends")
         request_friendship = Friendship.where(user: @user, friend: current_user).first
         request_friendship.confirmed = true
         request_friendship.save

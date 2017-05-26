@@ -1,10 +1,36 @@
-<% if @requesters.present? %>
-  <h3>Friendship requests:</h3>
+<% if @friends.present? %>
+  <h3>Friends:</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Avatar</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Money</th>
+        <th>Is Admin</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @friends.each do |user| %>
+        <tr>
+          <td><%= image_tag(user.avatar.url(:thumb), class: "avatar-thumb-img") %></td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.money %></td>
+          <td><%= user.is_admin %></td>
+          <td>
+            <%= link_to 'Show', user, class: "button" %>
+            <%= link_to 'Remove friend', friend_path(user), method: 'delete', class: "button" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 <% else %>
-  <h3>You don't have any friendship request.</h3>
-<% end %>
-<% @requesters.each do |requester| %>
-  <%= requester.username %>
-  <%= link_to 'Accept', friend_accept_path(requester), method: 'post', class: 'button' %>
-  <%= link_to 'Reject', friend_path(requester), method: 'delete', class: 'button' %>
+  <h3>You don't have any friends.</h3>
+  <img src="http://vignette3.wikia.nocookie.net/meme/images/9/91/4char-forever-alone-guy-high-resolution.png/revision/latest?cb=20110905121935" />
 <% end %>

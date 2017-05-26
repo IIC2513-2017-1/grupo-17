@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get  '/logout', to: 'sessions#destroy', as: 'logout'
 
   get    '/friends',                 to: 'friendships#list',           as: 'friends'
+  get    '/friends/requests',        to: 'friendships#list_requests',  as: 'friend_requests'
   post   '/friends/:user_id',        to: 'friendships#send_request',   as: 'friend'
   post   '/friends/accept/:user_id', to: 'friendships#accept_request', as: 'friend_accept'
   delete '/friends/:user_id',        to: 'friendships#destroy'

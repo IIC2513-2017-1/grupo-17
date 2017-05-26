@@ -35,7 +35,8 @@
     </table>
     <% if @user == current_user %>
       <%= link_to 'Find friends', users_path, class: 'button' %>
-      <%= link_to 'Who wants to be my friend?', friends_path, class: 'button' %>
+      <%= link_to 'My friends', friends_path, class: 'button' %>
+      <%= link_to 'Who wants to be my friend?', '/friends/requests', class: 'button' %>
     <% end %>
     <% if current_user&.is_admin and @user == current_user %>
       <h3>Site administration</h3>

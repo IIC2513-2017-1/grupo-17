@@ -1,5 +1,14 @@
 <ul>
   <% current_user.notifications.order(read: :asc).each do |notification| %>
-    <li><b><%= link_to notification.title, notification.url %></b>: <%= notification.description %></li>
+    <li>
+      <b>
+        <% if notification.url %>
+          <%= link_to notification.title, notification.url %>
+        <% else %>
+          <%= notification.title %>
+        <% end %>
+      </b>:
+      <%= notification.description %>
+    </li>
   <% end %>
 </ul>
