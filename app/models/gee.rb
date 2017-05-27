@@ -19,6 +19,7 @@ class Gee < ApplicationRecord
   belongs_to  :category
   has_many    :fields, dependent: :destroy
   has_many    :bets, dependent: :destroy
+  has_and_belongs_to_many :users
 
   #validates :fields,                          length: { minimum: 1 }
   validates :user,            presence: true
@@ -28,6 +29,13 @@ class Gee < ApplicationRecord
   validates :state,           presence: true, inclusion: {
       in: %w(opened closed),
   }
+
+  scope :visible, -> (current_user) {
+    if current_user
+      joins('LEFT JOIN gees_users ON gees.id=gees_users.gee_id')
+      .where('is_public=true OR gees_users.user_id=:current_user_id',
+        current_user_id: current_user.id)
+    else where(is_public: true) end }
 
   # The set_defaults will only work if the object is new
   after_initialize :set_defaults, unless: :persisted?

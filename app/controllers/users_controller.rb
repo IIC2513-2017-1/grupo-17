@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @gees = Gee.visible(current_user).where('gees.user_id=:user_id OR is_public=false', user_id: current_user.id)
     friendship = Friendship.where('user_id=:user AND friend_id=:friend OR user_id=:friend AND friend_id=:user',
       user: current_user, friend: @user).first
     if friendship.nil?

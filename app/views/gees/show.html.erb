@@ -1,5 +1,12 @@
 <div class="centered">
-  <h1><%= @gee.name %></h1>
+  <div id="gee-title">
+    <h1><%= @gee.name %></h1>
+    <% if @gee.is_public %>
+      <div class="green tag">Public</div>
+    <% else %>
+      <div class="grey tag">Private</div>
+    <% end %>
+  </div>
   <p><%= @gee.description %></p>
 
   <table>
@@ -14,10 +21,6 @@
     <tr>
       <td><b>State</b></td>
       <td><%= @gee.state %></td>
-    </tr>
-    <tr>
-      <td><b>Is Public</b></td>
-      <td><%= @gee.is_public %></td>
     </tr>
     <tr>
       <td><b>Created by</b></td>
@@ -57,6 +60,24 @@
       </tr>
     <% end %>
   </table>
+
+  <% if !@gee.is_public %>
+    <h3><b>Members</b></h3>
+    <table>
+      <% @gee.users.each do |user| %>
+        <tr>
+          <td><%= user.username %></td>
+          <% if @gee.user == current_user %>
+            <td><%= link_to "X", "/gees/#{@gee.id}/invite/#{user.id}", method: 'delete', class: "button" %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+    <% if @gee.user == current_user %>
+      <%= link_to "Invite friends", "/gees/#{@gee.id}/invite", class: "button" %>
+    <% end %>
+    <br><br>
+  <% end %>
 
   <br>
   <%= link_to "Create Bet", new_gee_bet_path(@gee), class: "button" %>

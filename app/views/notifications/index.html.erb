@@ -1,5 +1,5 @@
 <ul>
-  <% current_user.notifications.order(read: :asc).each do |notification| %>
+  <% current_user.notifications.order(created_at: :desc).each do |notification| %>
     <li>
       <b>
         <% if notification.url %>
