@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   # Destroy method will be used only by administrators
   resources :users
+  get 'users/confirmation/:token',   to: 'users#email_confirmation',   as: 'email_confirmation_user'
 
   # Following methods will be used only by administrators
   resources :categories, only: [:index, :create, :destroy]

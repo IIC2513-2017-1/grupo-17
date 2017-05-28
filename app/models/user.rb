@@ -14,6 +14,8 @@
 #  avatar_content_type :string
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
+#  email_confirmed     :boolean          default("false")
+#  confirm_token       :string
 #
 
 class User < ApplicationRecord
@@ -28,12 +30,10 @@ class User < ApplicationRecord
   has_many :friends, through: :friendships
   has_many :notifications
 
-  validates :username, presence: true, length: { in: 4..16 }, uniqueness: true
+  validates :username,        presence: true, length: { in: 4..16 }, uniqueness: true
   validates :password_digest, presence: true
-  validates :money, presence: true, numericality: {
-      greater_or_equal_than: 0
-  }
-  validates :email,    presence: true, length: { in: 6..40 }, uniqueness: true, format: {
+  validates :money,           presence: true, numericality: { greater_or_equal_than: 0 }
+  validates :email,           presence: true, length: { in: 6..40 }, uniqueness: true, format: {
     with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
     on: :create
   }
@@ -42,6 +42,7 @@ class User < ApplicationRecord
   after_initialize :set_defaults
 
   def set_defaults
+    self.email_confirmed = false if self.email_confirmed.nil?
     self.is_admin = false if self.is_admin.nil?
     self.money = 0 if self.money.nil?
   end
