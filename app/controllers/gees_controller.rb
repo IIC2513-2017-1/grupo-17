@@ -6,7 +6,7 @@ class GeesController < ApplicationController
 
   # GET /gees
   def index
-    @gees = Gee.where(is_public: true).includes(:bets, :user, :category)
+    @gees = Gee.visible(current_user).includes(:bets, :user, :category)
     respond_to do |format|
       format.html
       format.csv { send_data @gees.to_csv }
@@ -21,6 +21,21 @@ class GeesController < ApplicationController
   # GET /gees/new
   def new
     @gee = Gee.new
+  end
+
+  # GET /gees/1/close
+  def close
+  end
+
+  # PATCH /gees/1
+  def update
+    @gee.fields.each do |field|
+      field.update!(correct_value: params["field_#{field.id}"])
+    end
+    @gee.state = 'closed'
+    @gee.save
+    # Repartir plata
+    UserMailer.gee_result(@gee).deliver_later
   end
 
   # GET /gees/1/invite
@@ -150,8 +165,6 @@ class GeesController < ApplicationController
     end
 
     def has_permission
-      unless @gee.is_public || @gee.users.include?(current_user)
-        redirect_to root_path, notice: 'You have no permission.'
-      end
+      redirect_to root_path, notice: 'You have no permission.' unless @gee.is_public || @gee.users.include?(current_user)
     end
 end

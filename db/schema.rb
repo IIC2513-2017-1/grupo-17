@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528015541) do
+ActiveRecord::Schema.define(version: 20170529030933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,11 +36,12 @@ ActiveRecord::Schema.define(version: 20170528015541) do
   end
 
   create_table "fields", force: :cascade do |t|
-    t.integer "gee_id",    null: false
-    t.string  "name",      null: false
-    t.string  "ttype",     null: false
+    t.integer "gee_id",        null: false
+    t.string  "name",          null: false
+    t.string  "ttype",         null: false
     t.integer "min_value"
     t.integer "max_value"
+    t.integer "correct_value"
     t.index ["gee_id"], name: "index_fields_on_gee_id", using: :btree
   end
 

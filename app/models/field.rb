@@ -2,12 +2,13 @@
 #
 # Table name: fields
 #
-#  id        :integer          not null, primary key
-#  gee_id    :integer          not null
-#  name      :string           not null
-#  ttype     :string           not null
-#  min_value :integer
-#  max_value :integer
+#  id            :integer          not null, primary key
+#  gee_id        :integer          not null
+#  name          :string           not null
+#  ttype         :string           not null
+#  min_value     :integer
+#  max_value     :integer
+#  correct_value :integer
 #
 
 class Field < ApplicationRecord

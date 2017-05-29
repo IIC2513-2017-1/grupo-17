@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Close Gee</h1>
+
+  <%= form_for(@gee, url: {action: 'update'}) do |f| %>
+
+      <% @gee.fields.each do |field| %>
+          <div class="field-form">
+            <%= f.label field.name %>
+            <% if field.ttype == 'Alternatives' %>
+                <%= select_tag "field_#{field.id}", options_from_collection_for_select(field.alternatives, :id, :value) %>
+            <% else %>
+                <%= number_field_tag "field_#{field.id}", field.min_value, min: field.min_value, max: field.max_value %>
+            <% end %>
+          </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit 'Close Bet', class: 'button' %>
+      </div>
+  <% end %>
+
+  <%= link_to 'Back to Gee', gee_path(@gee), class: 'button' %>
+</div>
