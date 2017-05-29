@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
   has_many :gees, dependent: :destroy
   has_many :bets, dependent: :destroy
-  has_many :friendships
+  has_many :friendships, -> { where confirmed: true }
   has_many :friends, through: :friendships
   has_many :notifications
 

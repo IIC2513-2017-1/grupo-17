@@ -1,6 +1,7 @@
 class GeesController < ApplicationController
-  before_action :set_gee, only: [:show, :edit, :update, :destroy]
+  before_action :set_gee, only: [:show, :edit, :update, :destroy, :show_invite, :invite, :delete_member]
   before_action :require_login, only: [:new, :create]
+  before_action :has_permission, only: [:show, :edit, :update, :destroy, :show_invite, :invite, :delete_member]
 
 
   # GET /gees
@@ -22,11 +23,57 @@ class GeesController < ApplicationController
     @gee = Gee.new
   end
 
+  # GET /gees/1/invite
+  def show_invite
+    @friends = current_user.friends
+  end
+
+  # POST /gees/1/invite/:user_id
+  def invite
+    user = User.find(params[:user_id])
+    @gee.users << user
+    respond_to do |format|
+      if @gee.save!
+        user.notifications.create(
+          title: 'Gee invitation',
+          description: "#{current_user.username} has invited you to #{@gee.name}",
+          url: "/gees/#{@gee.id}")
+        format.html { redirect_to @gee, notice: "#{user.username} was successfully invited." }
+      else
+        format.html { render :new }
+      end
+    end
+  end
+
+  # DELETE /gees/1/invite/:user_id
+  def delete_member
+    user = User.find(params[:user_id])
+    if current_user == @gee.user || current_user == user
+      @gee.users.delete(user)
+      respond_to do |format|
+        if @gee.save!
+          if current_user == @gee.user
+            format.html { redirect_to @gee, notice: "#{user.username} was successfully removed." }
+          else
+            format.html { redirect_to user_path(current_user), notice: "You left #{@gee.name}." }
+          end
+        else
+          format.html { render :new }
+        end
+      end
+    else
+      format.html { redirect_to @gee, notice: "You don't have the permission to do that."}
+    end
+  end
+
   # POST /gees
   def create
     new_params = gee_params
     new_params[:user_id] = current_user[:id]
     @gee = Gee.new(new_params)
+    if !@gee.is_public
+      @gee.users << current_user
+    end
     @fields = []
     types = params[:field_types]
     types = [] if types.nil?
@@ -100,5 +147,11 @@ class GeesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def gee_params
       params.require(:gee).permit(:user_id, :name, :description, :category_id, :is_public, :expiration_date)
+    end
+
+    def has_permission
+      redirect_to root_path, notice: 'Your have no permission.'
+      unless @gee.is_public || @gee.users.include?(current_user)
+      end
     end
 end

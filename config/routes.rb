@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   get '/notifications', to: 'notifications#index'
 
+  get '/gees/:id/invite', to: 'gees#show_invite'
+  post '/gees/:id/invite/:user_id', to: 'gees#invite'
+  delete '/gees/:id/invite/:user_id', to: 'gees#delete_member'
+
   resources :gees, only: [:new, :create, :index, :show] do
     resources :bets, only: [:new, :create, :index, :show]
   end

@@ -51,8 +51,8 @@
 <button type="button" name="button" class="button" id="bets-container-button">Bets</button>
 
 <div id="gees-container">
-  <%= 'No Gees' unless @user.gees.present? %>
-  <% @user.gees.each do |gee| %>
+  <%= 'No Gees' unless @gees.present? %>
+  <% @gees.each do |gee| %>
     <div class="card">
       <div class="title"><%= gee.name %></div>
       <p><%= gee.description %></p>
@@ -75,6 +75,9 @@
         </tr>
       </table>
       <%= link_to 'Show details', gee_path(gee), class: 'button' %>
+      <% if gee.user != current_user %>
+        <%= link_to 'Leave', "/gees/#{gee.id}/invite/#{current_user.id}", method: 'delete', class: 'red button' %>
+      <% end %>
     </div>
   <% end %>
 </div>

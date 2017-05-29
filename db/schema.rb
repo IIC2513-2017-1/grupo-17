@@ -68,6 +68,13 @@ ActiveRecord::Schema.define(version: 20170528015541) do
     t.index ["user_id"], name: "index_gees_on_user_id", using: :btree
   end
 
+  create_table "gees_users", id: false, force: :cascade do |t|
+    t.integer "gee_id",  null: false
+    t.integer "user_id", null: false
+    t.index ["gee_id"], name: "index_gees_users_on_gee_id", using: :btree
+    t.index ["user_id"], name: "index_gees_users_on_user_id", using: :btree
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title",                       null: false
@@ -111,6 +118,8 @@ ActiveRecord::Schema.define(version: 20170528015541) do
   add_foreign_key "friendships", "users", column: "friend_id"
   add_foreign_key "gees", "categories"
   add_foreign_key "gees", "users"
+  add_foreign_key "gees_users", "gees"
+  add_foreign_key "gees_users", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "values", "bets"
   add_foreign_key "values", "fields"
