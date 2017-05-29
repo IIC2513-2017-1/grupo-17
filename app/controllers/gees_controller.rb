@@ -150,8 +150,8 @@ class GeesController < ApplicationController
     end
 
     def has_permission
-      redirect_to root_path, notice: 'Your have no permission.'
       unless @gee.is_public || @gee.users.include?(current_user)
+        redirect_to root_path, notice: 'You have no permission.'
       end
     end
 end

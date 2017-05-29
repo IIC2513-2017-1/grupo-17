@@ -2,6 +2,20 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#gees-index-head {
+  display: flex;
+  justify-content: space-between;
+
+  &div:nth-child(2) {
+    margin-right: 30px;
+  }
+}
+
+#gees-index-body {
+  display: flex;
+  justify-content: space-around;
+}
+
 #gee-title h1 {
   display: inline-block;
   margin-right: 20px;
