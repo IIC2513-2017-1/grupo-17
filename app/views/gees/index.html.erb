@@ -1,10 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Find your Gee</h1>
 
 <div>
-  <%= link_to 'Create New Gee', new_gee_path, class: "button" %>
+  <%= link_to 'Create New Gee', new_gee_path, class: 'button' %>
   <br><br>
+
   <% @gees.each do |gee| %>
     <div class="card">
       <div class="title"><%= gee.name %></div>
@@ -16,21 +15,26 @@
         </tr>
         <tr>
           <th>Bets</th>
-          <td><%= gee.bets.count %></td>
+          <td><%= gee.bets_amount %></td>
         </tr>
         <tr>
           <th>Money Well</th>
-          <td><%= gee.bets.map { |bet| bet.quantity }.sum %></td>
+          <td><%= gee.money_well %></td>
         </tr>
         <tr>
           <th>Expiration</th>
           <td><%= gee.expiration_date %></td>
         </tr>
       </table>
-      <%= link_to 'Show details', gee_path(gee), class: "button" %>
+      <%= link_to 'Show details', gee_path(gee), class: 'button' %>
     </div>
   <% end %>
 </div>
+<p>
+  <h4>Export Gee History</h4>
+  <%= link_to 'Download as CSV', gees_path(format: 'csv'), class: 'button' %><br><br>
+  <%= link_to 'Download as Excel', gees_path(format: 'xls'), class: 'button' %>
+</p>
 
 <!-- <table>
   <thead>

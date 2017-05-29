@@ -39,10 +39,10 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-
+    @user.confirm_token = SecureRandom.urlsafe_base64.to_s
     if @user.save
-      session[:user_id] = @user.id
-      redirect_to @user, notice: 'User was successfully created.'
+      UserMailer.registration_confirmation(@user).deliver
+      redirect_to login_path, notice: 'We have sent you an email to verify your email address.'
     else
       render :new
     end
@@ -69,6 +69,19 @@ class UsersController < ApplicationController
   def destroy
       @user.destroy
       redirect_to users_path, notice: 'User was successfully destroyed.'
+  end
+
+  def email_confirmation
+    token = params[:token]
+    user = User.find_by(confirm_token: token)
+    if token.nil? or user.nil?
+      redirect_to root_path and return
+    end
+    user.email_confirmed = true
+    user.confirm_token = nil
+    user.save!
+    flash[:notice] = 'Your email has been confirmed. Now you can login to your account.'
+    redirect_to login_path
   end
 
   private
