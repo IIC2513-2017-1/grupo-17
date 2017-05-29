@@ -38,4 +38,38 @@ class Gee < ApplicationRecord
     self.description = "" if self.description.nil?
   end
 
+  def bets_amount
+    bets.length
+  end
+
+  def money_well
+    bets.map { |bet| bet.quantity }.sum
+  end
+
+  def owner_name
+    user.username
+  end
+
+  def winner_option
+    '-'
+  end
+
+  def self.to_csv(options = {})
+    data = {
+        'Name':          'name',
+        'Owner':         'owner_name',
+        'Created at':    'created_at',
+        'Expires at':    'expiration_date',
+        'Bets':          'bets_amount',
+        'Money well':    'money_well',
+        'Winner option': 'winner_option'
+    }
+    CSV.generate(options) do |csv|
+      csv << data.keys
+      all.each do |gee|
+        csv << data.values.map { |attr| gee.send(attr) }
+      end
+    end
+  end
+
 end

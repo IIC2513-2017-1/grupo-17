@@ -5,7 +5,12 @@ class GeesController < ApplicationController
 
   # GET /gees
   def index
-    @gees = Gee.where(is_public: true)
+    @gees = Gee.where(is_public: true).includes(:bets, :user, :category)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @gees.to_csv }
+      format.xls { send_data @gees.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /gees/1
