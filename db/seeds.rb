@@ -69,6 +69,8 @@ soccer_friends_gee = Gee.find_by_name('Soccer with friends') || Gee.create!(
   is_public: false,
   expiration_date: '2017-07-03')
 
+soccer_friends_gee.users << test_user1
+
 soccer_friends_field1 = soccer_friends_gee.fields.find_by_name('Local') || soccer_friends_gee.fields.create!(
   name: 'Local',
   ttype: 'Number',
@@ -80,6 +82,27 @@ soccer_friends_field2 = soccer_friends_gee.fields.find_by_name('Visit') || socce
   ttype: 'Number',
   min_value: 0,
   max_value: 30)
+
+# Create a Gee for FEUC Elections
+feuc_elections_gee = Gee.find_by_name('FEUC Elections') || Gee.create!(
+    user: test_user1,
+    name: 'FEUC Elections',
+    description: 'Vote for your favorite political party',
+    category: politics_category,
+    state: 'opened',
+    is_public: true,
+    expiration_date: '2017-12-01')
+
+feuc_elections_field1 = feuc_elections_gee.fields.find_by_name('Political Party') || feuc_elections_gee.fields.create!(
+    name: 'Political Party',
+    ttype: 'Alternatives',
+    min_value: nil,
+    max_value: nil)
+
+feuc_elections_field1.alternatives.create(value: 'MG')
+feuc_elections_field1.alternatives.create(value: 'Crecer')
+feuc_elections_field1.alternatives.create(value: 'Solidaridad')
+feuc_elections_field1.alternatives.create(value: 'Nau')
 
 # Create some bets
 bet1 = usa_elections_gee.bets.find_or_create_by!(

@@ -62,8 +62,19 @@ class Gee < ApplicationRecord
     user.username
   end
 
-  def winner_option
-    '-'
+  def correct_answer
+    correct_results = []
+    fields.each do |field|
+      value = field.correct_value
+      if value.nil?
+        return '(Gee still open)'
+      end
+      if field.ttype == 'Alternatives'
+        value = field.alternatives.find(value).value
+      end
+      correct_results << "#{field.name}=#{value}"
+    end
+    correct_results.join('|')
   end
 
   def winner_bets
@@ -85,13 +96,13 @@ class Gee < ApplicationRecord
 
   def self.to_csv(options = {})
     data = {
-        'Name':          'name',
-        'Owner':         'owner_name',
-        'Created at':    'created_at',
-        'Expires at':    'expiration_date',
-        'Bets':          'bets_amount',
-        'Money well':    'money_well',
-        'Winner option': 'winner_option'
+        'Name':           'name',
+        'Owner':          'owner_name',
+        'Created at':     'created_at',
+        'Expires at':     'expiration_date',
+        'Bets':           'bets_amount',
+        'Money well':     'money_well',
+        'Correct answer': 'correct_answer'
     }
     CSV.generate(options) do |csv|
       csv << data.keys

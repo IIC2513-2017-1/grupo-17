@@ -103,7 +103,7 @@ class GeesController < ApplicationController
     new_params = gee_params
     new_params[:user_id] = current_user[:id]
     @gee = Gee.new(new_params)
-    if !@gee.is_public
+    unless @gee.is_public
       @gee.users << current_user
     end
     @fields = []
