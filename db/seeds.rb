@@ -22,6 +22,7 @@ test_user1 = User.find_by_username('testuser1') || User.create!(
   email: 'test@user.com',
   password: 'dificil',
   is_admin: false,
+  email_confirmed: true,
   money: 1000)
 
 test_user2 = User.find_by_username('testuser2') || User.create!(
@@ -29,6 +30,7 @@ test_user2 = User.find_by_username('testuser2') || User.create!(
   email: 'test2@user.com',
   password: 'dificil',
   is_admin: false,
+  email_confirmed: true,
   money: 1000)
 
 # Create a friendship between them
