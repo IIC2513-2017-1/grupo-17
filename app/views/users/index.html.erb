@@ -22,7 +22,7 @@
         <td><%= user.is_admin %></td>
         <td>
           <%= link_to 'Show', user, class: "button" %>
-          <% if current_user.is_admin %>
+          <% if current_user&.is_admin %>
             <%= link_to 'Edit', edit_user_path(user), class: "button" %>
             <%= link_to 'Destroy', user, class: "button", method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>

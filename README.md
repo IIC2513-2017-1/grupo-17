@@ -15,8 +15,17 @@ Gees es una plataforma donde los usuarios crean sus propias apuestas y
 las demás personas pueden apostar. A cada una de estas apuestas que crean
 los usuarios se les llama Gee.
 
-### Aclaraciones
-- Como todavía no hay un sistema de notificaciones para aceptar una solicitud de amistad tendrás que ir a tu perfil y hacer click en "Who wants to be my friend?"
+### ¿Cómo probar la aplicación?
+En las _seeds_ se han creado 3 usuarios para hacer pruebas:
+
+| Username | Password | Rol    |
+| :------: | :------: | :----: |
+| betgod   | dificil       | administrador   |
+| testuser1   | dificil     | usuario |
+| testuser2   | dificil     | usuario |
+
+También es posible crearse una cuenta nueva, pero debe ingresarse un correo válido
+ya que el registro requiere confirmación del correo.
 
 ### TODO's
 - Mejorar validación al crear Bet
