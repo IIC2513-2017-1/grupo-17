@@ -12,7 +12,7 @@
 }
 
 #gees-index-body {
-  display: flex;
+  //display: flex;
   justify-content: space-around;
 }
 
@@ -27,6 +27,9 @@
   }
   &.grey {
     background: grey;
+  }
+  &.red {
+    background: red;
   }
   border-radius: 3px 3px 3px 3px;
   color: white;

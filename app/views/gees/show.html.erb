@@ -1,14 +1,17 @@
 <div class="centered">
   <div id="gee-title">
     <h1><%= @gee.name %></h1>
-    <% if @gee.is_public %>
+    <% if @gee.state == 'closed' %>
+      <div class="red tag">Closed</div>
+    <% elsif @gee.is_public %>
       <div class="green tag">Public</div>
     <% else %>
       <div class="grey tag">Private</div>
     <% end %>
   </div>
-  <p><%= @gee.description %></p>
-
+  <p>
+    <%= @gee.description %>
+  </p>
   <table>
     <tr>
       <td><b>Category</b></td>
@@ -61,27 +64,33 @@
     <% end %>
   </table>
 
-  <% if !@gee.is_public %>
+  <% unless @gee.is_public %>
     <h3><b>Members</b></h3>
     <table>
       <% @gee.users.each do |user| %>
         <tr>
           <td><%= user.username %></td>
           <% if @gee.user == current_user %>
-            <td><%= link_to "X", "/gees/#{@gee.id}/invite/#{user.id}", method: 'delete', class: "button" %></td>
+            <td><%= link_to 'X', "/gees/#{@gee.id}/invite/#{user.id}", method: 'delete', class: 'button' %></td>
           <% end %>
         </tr>
       <% end %>
     </table>
     <% if @gee.user == current_user %>
-      <%= link_to "Invite friends", "/gees/#{@gee.id}/invite", class: "button" %>
+      <%= link_to 'Invite friends', "/gees/#{@gee.id}/invite", class: 'button' %>
     <% end %>
     <br><br>
   <% end %>
 
   <br>
-  <%= link_to "Create Bet", new_gee_bet_path(@gee), class: "button" %>
-  <%= link_to "Current Bets", gee_bets_path(@gee), class: "button" %>
+  <% if @gee.state == 'opened' %>
+      <%= link_to 'Create Bet', new_gee_bet_path(@gee), class: 'button' %>
+      <%= link_to 'Current Bets', gee_bets_path(@gee), class: 'button' %>
+      <% if current_user.is_admin %>
+          <%= link_to 'Close this Gee', close_gee_path(@gee), class: 'red button' %>
+      <% end %>
+  <% end %>
+
   <br><br>
-  <%= link_to "Back to Gees", gees_path, class: "button" %>
+  <%= link_to 'Back to Gees', gees_path, class: 'button' %>
 </div>

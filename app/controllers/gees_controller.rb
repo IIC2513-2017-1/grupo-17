@@ -1,7 +1,8 @@
 class GeesController < ApplicationController
-  before_action :set_gee, only: [:show, :edit, :update, :destroy, :show_invite, :invite, :delete_member]
-  before_action :require_login, only: [:new, :create]
-  before_action :has_permission, only: [:show, :edit, :update, :destroy, :show_invite, :invite, :delete_member]
+  before_action :set_gee, only: [:show, :close, :update, :destroy, :show_invite, :invite, :delete_member]
+  before_action :require_login, only: [:new, :create, :show_invite, :invite, :delete_member]
+  before_action :require_admin, only: [:close, :update]
+  before_action :has_permission, only: [:show, :show_invite, :invite, :delete_member]
 
 
   # GET /gees
@@ -34,8 +35,24 @@ class GeesController < ApplicationController
     end
     @gee.state = 'closed'
     @gee.save
-    # Repartir plata
-    UserMailer.gee_result(@gee).deliver_later
+
+    money_well = @gee.money_well
+    winner_bets = @gee.winner_bets
+    factor = winner_bets.map { |bet| bet.quantity }.sum.to_f
+
+    @gee.bets.includes(:user).each do |bet|
+      if winner_bets.include? bet
+        earnings = (bet.quantity / factor) * money_well
+        earnings = earnings.to_i
+        user = bet.user
+        user.money += earnings
+        user.save
+        UserMailer.gee_winner(user, @gee, earnings).deliver_later
+      else
+        UserMailer.gee_looser(bet.user, @gee).deliver_later
+      end
+    end
+    redirect_to @gee, notice: 'The gee has been closed and the money has been distrubuted among bettors'
   end
 
   # GET /gees/1/invite
@@ -165,6 +182,8 @@ class GeesController < ApplicationController
     end
 
     def has_permission
-      redirect_to root_path, notice: 'You have no permission.' unless @gee.is_public || @gee.users.include?(current_user)
+      unless @gee.is_public || @gee.users.include?(current_user)
+        redirect_to root_path, notice: 'You have no permission.'
+      end
     end
 end

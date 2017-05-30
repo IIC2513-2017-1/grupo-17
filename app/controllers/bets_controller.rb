@@ -1,22 +1,16 @@
 class BetsController < ApplicationController
   before_action :set_gee
   before_action :require_login, only: [:new, :create]
+  before_action :has_permission
 
   # GET gees/:gee_id/bets
   def index
-    if @gee.is_public
-      @bets = Bet.where(gee: @gee)
-    else
-      redirect_to gee_path(@gee), alert: 'You cannot see bets from non public Gees'
-    end
+    @bets = Bet.where(gee: @gee)
   end
 
   # GET gees/:gee_id/bets/:id
   def show
     @bet = Bet.find(params[:id])
-    if @bet.user != current_user
-      redirect_to gee_bets_path(@gee), alert: 'You cannot see a bet if it is not yours'
-    end
   end
 
   # GET gees/:gee_id/bets/new
@@ -78,5 +72,11 @@ class BetsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
     def bet_params
       params.require(:bet).permit(:user_id, :quantity)
+    end
+
+    def has_permission
+      unless @gee.is_public || @gee.users.include?(current_user)
+        redirect_to root_path, notice: 'You have no permission.'
+      end
     end
 end

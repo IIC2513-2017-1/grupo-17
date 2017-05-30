@@ -14,11 +14,12 @@ Rails.application.routes.draw do
 
   get '/notifications', to: 'notifications#index'
 
-  get '/gees/:id/invite', to: 'gees#show_invite'
-  post '/gees/:id/invite/:user_id', to: 'gees#invite'
+  get    '/gees/:id/invite',          to: 'gees#show_invite'
+  post   '/gees/:id/invite/:user_id', to: 'gees#invite'
   delete '/gees/:id/invite/:user_id', to: 'gees#delete_member'
+  get    '/gees/:id/close',           to: 'gees#close',         as: 'close_gee'
 
-  resources :gees, only: [:new, :create, :index, :show] do
+  resources :gees, only: [:new, :create, :index, :show, :update] do
     resources :bets, only: [:new, :create, :index, :show]
   end
 

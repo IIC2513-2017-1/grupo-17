@@ -22,8 +22,9 @@ los usuarios se les llama Gee.
 - Mejorar validación al crear Bet
 - Mejorar validación al crear Gees
 - Enviar mensajes de error correctos para cada validación
-- Vista para ver mis amistades, mis solicitudes recibidas y mis solicitudes enviadas
+- Unificar vista para ver mis amistades, mis solicitudes recibidas y mis solicitudes enviadas
 - Arreglar queries n+1
 - Agregar gráficos o estadísticas en index de bets
 - Definir qué cosas pueden modificar el usuario de su perfil
-- Definir mejor la logica de Gees publicas y privadas
+- Revisar que funcione el cambio de contraseña
+- Descomentar la validación de minimo 1 Field para cada Gee (y con ello cambiar las seeds para que no tiren error)

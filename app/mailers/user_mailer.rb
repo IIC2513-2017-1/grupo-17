@@ -6,12 +6,17 @@ class UserMailer < ActionMailer::Base
     mail(to: "#{user.username} <#{user.email}>", subject: 'Registration Confirmation')
   end
 
-  def gee_result(gee)
+  def gee_winner(user, gee, earnings)
+    @user = user
     @gee = gee
-    gee.users.each do |user|
-      @user = user
-      mail(to: "#{user.username} <#{user.email}>", subject: 'Gee results')
-    end
+    @earnings = earnings
+    mail(to: "#{user.username} <#{user.email}>", subject: 'Gee results')
+  end
+
+  def gee_looser(user, gee)
+    @user = user
+    @gee = gee
+    mail(to: "#{user.username} <#{user.email}>", subject: 'Gee results')
   end
 
 end

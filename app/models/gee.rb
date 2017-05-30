@@ -33,9 +33,13 @@ class Gee < ApplicationRecord
   scope :visible, -> (current_user) {
     if current_user
       joins('LEFT JOIN gees_users ON gees.id=gees_users.gee_id')
-      .where('is_public=true OR gees_users.user_id=:current_user_id',
-        current_user_id: current_user.id)
-    else where(is_public: true) end }
+      .where(state: 'opened')
+        .where('is_public=true OR gees_users.user_id=:current_user_id',
+          current_user_id: current_user.id)
+    else
+      where(is_public: true, state: 'opened')
+    end
+  }
 
   # The set_defaults will only work if the object is new
   after_initialize :set_defaults, unless: :persisted?
@@ -60,6 +64,23 @@ class Gee < ApplicationRecord
 
   def winner_option
     '-'
+  end
+
+  def winner_bets
+    winners = []
+    bets.includes(values: [:field]).each do |bet|
+      winner = true
+      bet.values.each do |value|
+        if value.value != value.field.correct_value
+          winner = false
+          break
+        end
+      end
+      if winner
+        winners << bet
+      end
+    end
+    winners
   end
 
   def self.to_csv(options = {})

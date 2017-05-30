@@ -16,7 +16,7 @@
         <% if @friendship_status == 'not_friends' %>
           <%= link_to 'Add friend', friend_path(@user), method: 'post', class: 'button' %>
         <% elsif @friendship_status == 'pending_request' %>
-          <span class="button">Pending friendship request</span>
+          <div class='green tag'>Pending friendship request</div>
         <% elsif @friendship_status == 'friends' %>
           <%= link_to 'Remove friend', friend_path(@user), method: 'delete', class: 'button' %>
         <% end %>
@@ -51,8 +51,8 @@
 <button type="button" name="button" class="button" id="bets-container-button">Bets</button>
 
 <div id="gees-container">
-  <%= 'No Gees' unless @gees.present? %>
-  <% @gees.each do |gee| %>
+  <%= 'No Gees' unless @user.gees.present? %>
+  <% @user.gees.each do |gee| %>
     <div class="card">
       <div class="title"><%= gee.name %></div>
       <p><%= gee.description %></p>
