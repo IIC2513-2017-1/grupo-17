@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+  $(window).click(function() {
+    $('#notification-dropdown').removeClass('show');
+  });
+
+  $('#notification-icon').click(function(event) {
+    event.stopPropagation();
+    $('#notification-dropdown').toggleClass('show');
+  });
+
+  $('#notification-dropdown').click(function(event) {
+    event.stopPropagation();
+  });
+});
