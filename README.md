@@ -37,3 +37,4 @@ ya que el registro requiere confirmación del correo.
 - Definir qué cosas pueden modificar el usuario de su perfil
 - Revisar que funcione el cambio de contraseña
 - Descomentar la validación de minimo 1 Field para cada Gee (y con ello cambiar las seeds para que no tiren error)
+- Arreglar icono de notificaciones en producción (error de fontawesome en consola)
