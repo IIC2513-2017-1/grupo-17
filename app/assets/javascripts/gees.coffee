@@ -23,3 +23,13 @@ $(document).on "turbolinks:load", () ->
     $(this).parents("#alternative-field").children(".alternative-number").val (i, oldval) ->
       --oldval
     $(this).parent().remove()
+
+  if $('#infinite-scrolling').size() > 0
+    setInterval () ->
+      more_posts_url = $('.pagination .next_page').attr('href')
+      if more_posts_url && $(window).scrollTop() > $(document).height() - $(window).height() - 60
+        $('.pagination').html('<img src="/assets/ajax-loader.gif" alt="Loading..." title="Loading..." />')
+        $.getScript more_posts_url
+      return
+    , 1000
+    return

@@ -4,12 +4,18 @@ class GeesController < ApplicationController
   before_action :require_admin, only: [:close, :update]
   before_action :has_permission, only: [:show, :show_invite, :invite, :delete_member]
 
+  def get_gees(page)
+    respond_to do |format|
+      format.json {  }
+    end
+  end
 
   # GET /gees
   def index
-    @gees = Gee.visible(current_user).includes(:bets, :user, :category)
+    @gees = Gee.visible(current_user).paginate(page: params[:page], per_page: 3).order('created_at DESC').includes(:bets, :user, :category)
     respond_to do |format|
       format.html
+      format.js
       format.csv { send_data @gees.to_csv }
       format.xls { send_data @gees.to_csv(col_sep: "\t") }
     end

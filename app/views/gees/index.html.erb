@@ -11,29 +11,9 @@
 </div>
 
 <div id="gees-index-body">
-  <% @gees.each do |gee| %>
-    <div class="card">
-      <div class="title"><%= gee.name %></div>
-      <p><%= gee.description %></p>
-      <table>
-        <tr>
-          <th>Category</th>
-          <td><%= gee.category.name %></td>
-        </tr>
-        <tr>
-          <th>Bets</th>
-          <td><%= gee.bets_amount %></td>
-        </tr>
-        <tr>
-          <th>Money Well</th>
-          <td><%= gee.money_well %></td>
-        </tr>
-        <tr>
-          <th>Expiration</th>
-          <td><%= gee.expiration_date %></td>
-        </tr>
-      </table>
-      <%= link_to 'Show details', gee_path(gee), class: 'button' %>
-    </div>
-  <% end %>
+  <%= render @gees %>
+</div>
+
+<div id="infinite-scrolling">
+  <%= will_paginate %>
 </div>
