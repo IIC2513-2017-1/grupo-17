@@ -6,13 +6,15 @@
 $(document).on 'turbolinks:load', () ->
 
     $('#hidden-data ul li').each (index) ->
-      value = $(this).text()
+      aux = $(this).text().split(' ', 2)
+      valueId = aux[0]
+      valueName = aux[1]
       $('#bets-charts').append('<div id=chart' + index + '></div>')
 
       data = []
 
       $('#hidden-data').find('tbody').children().each (index) ->
-        if $(this).children(':nth-child(1)').text() == value
+        if $(this).children(':nth-child(1)').text() == valueId
           data.push({
             name: $(this).children(':nth-child(2)').text()
             y: parseInt($(this).children(':nth-child(3)').text())
@@ -26,7 +28,7 @@ $(document).on 'turbolinks:load', () ->
               type: 'pie'
           },
           title: {
-              text: 'Value ' + value
+              text: valueName
           },
           tooltip: {
               pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -42,7 +44,7 @@ $(document).on 'turbolinks:load', () ->
               }
           },
           series: [{
-              name: 'Brands',
+              name: 'Values',
               colorByPoint: true,
               data: data
           }]

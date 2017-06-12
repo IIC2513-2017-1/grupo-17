@@ -8,7 +8,7 @@
   <div style="display: none;" id="hidden-data">
     <ul>
       <% @fields.each do |field| %>
-        <li><%= field.id %></li>
+        <li><%= field.id %> <%= field.name %></li>
       <% end %>
     </ul>
     <table>
