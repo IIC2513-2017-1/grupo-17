@@ -7,8 +7,8 @@ class BetsController < ApplicationController
   def index
     @bets = Bet.where(gee: @gee)
     @fields = Field.where(gee: @gee)
-    query = 'SELECT field_id, value, sum(bets.quantity), count(*) FROM bets, values
-      WHERE bets.id=values.bet_id AND bets.gee_id=3 GROUP BY field_id, value'
+    query = "SELECT field_id, value, sum(bets.quantity), count(*) FROM bets, values
+      WHERE bets.id=values.bet_id AND bets.gee_id=#{ActiveRecord::Base.sanitize(@gee.id)} GROUP BY field_id, value"
     @statistics = ActiveRecord::Base.connection.execute(query)
   end
 
