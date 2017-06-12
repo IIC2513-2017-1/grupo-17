@@ -1,0 +1,7 @@
+$('#gees-index-body').append('<%= j render @gees %>');
+<% if @gees.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @gees %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>

@@ -12,13 +12,19 @@
 }
 
 #gees-index-body {
-  //display: flex;
-  justify-content: space-around;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 #gee-title h1 {
   display: inline-block;
   margin-right: 20px;
+}
+
+#infinite-scrolling {
+  display: flex;
+  justify-content: center;
 }
 
 .tag {

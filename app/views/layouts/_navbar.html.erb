@@ -5,9 +5,21 @@
         <li class="right"><%= link_to 'Logout', logout_path %></li>
         <li class="right"><%= link_to 'Profile', user_path(current_user) %></li>
         <li class="right">
+          <!-- <button class="fa fa-bell badge button" id="notification-icon"></button> -->
           <%= link_to fa_icon("bell",
+            id: "notification-icon",
             class: "badge",
-            data: {badge: current_user.notifications.where(read: false).count.to_s}), '/notifications' %>
+            data: {badge: current_user.notifications.where(read: false).count.to_s}), 'javascript:;' %>
+          <div id="notification-dropdown" class="dropdown-content">
+            <% current_user.notifications.order(created_at: :desc).limit(10).each do |notification| %>
+              <% if notification.url %>
+                <%= link_to "#{notification.title}: #{notification.description}", notification.url %>
+              <% else %>
+                <%= link_to "#{notification.title}: #{notification.description}", '/notifications' %>
+              <% end %>
+            <% end %>
+            <%= link_to "More...", '/notifications' %>
+          </div>
         </li>
         <li class="right"><a>Welcome <%= current_user.username %></a></li>
     <% else %>

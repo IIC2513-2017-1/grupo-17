@@ -59,3 +59,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Other gems
 gem 'paperclip', '~> 5.1.0'
 gem 'font-awesome-rails', '~> 4.7.0.2'
+gem 'will_paginate', '~> 3.1.0'
