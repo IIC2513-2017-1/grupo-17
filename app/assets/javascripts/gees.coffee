@@ -24,6 +24,17 @@ $(document).on "turbolinks:load", () ->
       --oldval
     $(this).parent().remove()
 
+  modal = $("#bet-modal")
+  modalBody = $('#bet-modal-body')
+
+  $("#open-bet-modal").on "click", () ->
+    $.get "/gees/#{modalBody.attr('data-geeid')}/bets/new", (data) ->
+      modalBody.html(data)
+    modal.css('display', 'block')
+
+  $("#close-bet-modal").on "click", () ->
+    modal.css('display', 'none')
+
   if $('#infinite-scrolling').size() > 0
     setInterval () ->
       more_posts_url = $('.pagination .next_page').attr('href')

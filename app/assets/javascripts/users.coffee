@@ -15,3 +15,14 @@ $(document).on "turbolinks:load", () ->
     $("#gees-container-button").removeClass("active")
     $("#gees-container").hide()
     $("#bets-container").show()
+
+  modal = $("#profile-modal")
+  modalBody = $('#profile-modal-body')
+
+  $("#open-profile-modal").on "click", () ->
+    $.get "/users/#{modalBody.attr('data-userid')}/edit", (data) ->
+      modalBody.html(data)
+    modal.css('display', 'block')
+
+  $("#close-profile-modal").on "click", () ->
+    modal.css('display', 'none')

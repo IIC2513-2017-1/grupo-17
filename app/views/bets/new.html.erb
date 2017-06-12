@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container centered">
   <h1>New Bet</h1>
 
   <%= form_for(@bet, url: {action: "create"}) do |f| %>
@@ -34,6 +34,4 @@
         <%= f.submit 'Create Bet', class: 'button' %>
       </div>
   <% end %>
-
-  <%= link_to 'Back to Gee', gee_path(@gee), class: 'button' %>
 </div>

@@ -58,8 +58,8 @@ usa_elections_field1 = usa_elections_gee.fields.find_by_name('President') || usa
   min_value: nil,
   max_value: nil)
 
-usa_elections_field1.alternatives.create(value: 'Obama')
-usa_elections_field1.alternatives.create(value: 'Trump')
+alternative1 = usa_elections_field1.alternatives.create(value: 'Obama')
+alternative2 = usa_elections_field1.alternatives.create(value: 'Trump')
 
 # Create a Gee for Soccer with friends
 soccer_friends_gee = Gee.find_by_name('Soccer with friends') || Gee.create!(
@@ -112,11 +112,11 @@ bet1 = usa_elections_gee.bets.find_or_create_by!(
   quantity: 100)
 bet1.values.create(
   field: usa_elections_field1,
-  value: 'Obama')
+  value: alternative1.id)
 
 bet2 = usa_elections_gee.bets.find_or_create_by!(
   user: test_user2,
   quantity: 200)
 bet2.values.create(
   field: usa_elections_field1,
-  value: 'Obama')
+  value: alternative1.id)
