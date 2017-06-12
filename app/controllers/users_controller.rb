@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     if @user == current_user or current_user.is_admin
-      render :edit
+      render layout: false
     else
       redirect_to root_path
     end

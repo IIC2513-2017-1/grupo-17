@@ -16,6 +16,11 @@ class BetsController < ApplicationController
   # GET gees/:gee_id/bets/new
   def new
     @bet = Bet.new
+    if @gee.expiration_date > Time.current
+      render layout: false
+    else
+      render '<h2>This gee has reached its expiration time, so no more bets can be made.</h2>'
+    end
   end
 
   # POST gees/:gee_id/bets
@@ -28,8 +33,7 @@ class BetsController < ApplicationController
 
     if current_user.money < new_params[:quantity].to_i
       flash.now[:alert] = 'You don\'t have enough money.'
-      render :new
-      return
+      render :new and return
     end
 
     values = []

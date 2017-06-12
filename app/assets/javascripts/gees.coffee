@@ -23,3 +23,14 @@ $(document).on "turbolinks:load", () ->
     $(this).parents("#alternative-field").children(".alternative-number").val (i, oldval) ->
       --oldval
     $(this).parent().remove()
+
+  modal = $("#bet-modal")
+  modalBody = $('#bet-modal-body')
+
+  $("#open-bet-modal").on "click", () ->
+    $.get "/gees/#{modalBody.attr('data-geeid')}/bets/new", (data) ->
+      modalBody.html(data)
+    modal.css('display', 'block')
+
+  $("#close-bet-modal").on "click", () ->
+    modal.css('display', 'none')

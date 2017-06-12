@@ -84,7 +84,7 @@
 
   <br>
   <% if @gee.state == 'opened' %>
-      <%= link_to 'Create Bet', new_gee_bet_path(@gee), class: 'button' %>
+      <a class="button" id="open-bet-modal">Create Bet</a>
       <%= link_to 'Current Bets', gee_bets_path(@gee), class: 'button' %>
       <% if current_user.is_admin %>
           <%= link_to 'Close this Gee', close_gee_path(@gee), class: 'red button' %>
@@ -93,4 +93,12 @@
 
   <br><br>
   <%= link_to 'Back to Gees', gees_path, class: 'button' %>
+</div>
+
+<!-- Bet modal -->
+<div id="bet-modal" class="modal">
+  <div class="modal-content">
+    <span id="close-bet-modal" class="modal-close">&times;</span>
+    <div id="bet-modal-body" data-geeid="<%= @gee.id %>"></div>
+  </div>
 </div>

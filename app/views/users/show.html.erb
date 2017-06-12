@@ -10,7 +10,7 @@
         <% if @user.is_admin %> (Admin) <% end %>
       </h1>
       <% if @user == current_user or current_user&.is_admin %>
-        <%= link_to 'Edit profile', edit_user_path, class: 'button' %>
+        <a class="button" id="open-profile-modal">Edit Profile</a>
       <% end %>
       <% if @user != current_user %>
         <% if @friendship_status == 'not_friends' %>
@@ -91,4 +91,12 @@
       <%= link_to 'Show details', gee_bet_path(bet.gee, bet), class: 'button' %>
     </div>
   <% end %>
+</div>
+
+<!-- Profile modal -->
+<div id="profile-modal" class="modal">
+  <div class="modal-content">
+    <span id="close-profile-modal" class="modal-close">&times;</span>
+    <div id="profile-modal-body" data-userid="<%= @user.id %>"></div>
+  </div>
 </div>
