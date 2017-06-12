@@ -1,6 +1,30 @@
 <div class="container">
   <h2>Bets for <%= @gee.name %></h2>
 
+  <h3>Statistics</h3>
+  <div id="bets-charts">
+  </div>
+  <%= @statistics.first[:field_id] %>
+  <div style="display: none;" id="hidden-data">
+    <ul>
+      <% @fields.each do |field| %>
+        <li><%= field.id %></li>
+      <% end %>
+    </ul>
+    <table>
+      <tbody>
+        <% @statistics.each do |stat| %>
+          <tr>
+            <td><%= stat['field_id'] %></td>
+            <td><%= stat['value'] %></td>
+            <td><%= stat['sum'] %></td>
+            <td><%= stat['count'] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
   <table>
     <thead>
     <tr>
