@@ -2,6 +2,24 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.match.card:hover {
+  background-color: red;
+}
+
+#expand-matches-button {
+  background-color: red;
+
+  &:hover {
+    background-color: brown;
+  }
+}
+
+#upcoming-matches-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
 #gees-index-head {
   display: flex;
   justify-content: space-between;

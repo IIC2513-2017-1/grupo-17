@@ -47,6 +47,11 @@
 
       <a id="add-alternative-field" class="button">Add alternative field</a>
       <a id="add-numeric-field" class="button">Add numeric field</a>
+      <br><br>
+      <a id="expand-matches-button" class="button">Upcoming soccer matches</a>
+      <div id="upcoming-matches-container">
+
+      </div>
 
       <br><br>
 
@@ -58,4 +63,11 @@
 
   <%= render 'gees/numeric_field.html.erb' %>
   <%= render 'gees/alternative_field.html.erb' %>
+</div>
+
+<div id="match-card-container" style="display: none;">
+  <div class="match card">
+    <div class="title"></div>
+    <p></p>
+  </div>
 </div>
