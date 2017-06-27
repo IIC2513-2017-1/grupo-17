@@ -29,4 +29,14 @@ Rails.application.routes.draw do
 
   # Following methods will be used only by administrators
   resources :categories, only: [:index, :create, :destroy]
+
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:index, :show]
+      resources :notifications, only: [:index]
+      resources :gees, only: [:index, :show, :create]
+      resources :bets, only: [:index, :show, :create]
+      resources :categories, only: [:index]
+    end
+  end
 end
