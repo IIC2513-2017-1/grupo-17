@@ -16,6 +16,7 @@
 #  avatar_updated_at   :datetime
 #  email_confirmed     :boolean          default("false")
 #  confirm_token       :string
+#  api_token           :string
 #
 
 require 'test_helper'

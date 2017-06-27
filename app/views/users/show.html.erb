@@ -30,7 +30,11 @@
       </tr>
       <tr>
         <td><b>Money</b></td>
-        <td>$ <%= @user.money %></td>
+        <td>$<%= @user.money %></td>
+      </tr>
+      <tr>
+        <td><b>API Token</b></td>
+        <td><%= @user.api_token %></td>
       </tr>
     </table>
     <% if @user == current_user %>

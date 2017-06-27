@@ -39,7 +39,6 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-    @user.confirm_token = SecureRandom.urlsafe_base64.to_s
     if @user.save
       UserMailer.registration_confirmation(@user).deliver
       redirect_to login_path, notice: 'We have sent you an email to verify your email address.'

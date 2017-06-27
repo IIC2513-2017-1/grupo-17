@@ -16,6 +16,7 @@
 #  avatar_updated_at   :datetime
 #  email_confirmed     :boolean          default("false")
 #  confirm_token       :string
+#  api_token           :string
 #
 
 class User < ApplicationRecord
@@ -38,13 +39,14 @@ class User < ApplicationRecord
     on: :create
   }
 
-  # The set_defaults will only work if the object is new
-  after_initialize :set_defaults
+  before_save :set_defaults
 
   def set_defaults
     self.email_confirmed = false if self.email_confirmed.nil?
     self.is_admin = false if self.is_admin.nil?
     self.money = 0 if self.money.nil?
+    self.api_token = SecureRandom.urlsafe_base64.to_s if self.api_token.nil?
+    self.confirm_token = SecureRandom.urlsafe_base64.to_s if self.confirm_token.nil?
   end
 
 end
