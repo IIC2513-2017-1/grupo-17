@@ -34,8 +34,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :show]
       resources :notifications, only: [:index]
-      resources :gees, only: [:index, :show, :create]
-      resources :bets, only: [:index, :show, :create]
+      resources :gees, only: [:index, :show, :create] do
+        resources :bets, only: [:index, :show, :create]
+      end
       resources :categories, only: [:index]
     end
   end

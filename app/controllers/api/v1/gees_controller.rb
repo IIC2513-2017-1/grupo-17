@@ -49,29 +49,29 @@ module Api::V1
       end
 
       @gee.fields = @fields
-      respond_to do |format|
-        success = false
-        Gee.transaction do
-          begin
-            for field in @gee.fields
-              for alternative in field.alternatives
-                alternative.save!
-              end
-              field.save!
-            end
-            @gee.save!
 
-            success = true
-          rescue
-            raise ActiveRecord::Rollback
+      success = false
+      Gee.transaction do
+        begin
+          for field in @gee.fields
+            for alternative in field.alternatives
+              alternative.save!
+            end
+            field.save!
           end
-        end
-        if success
-          format.json @gee
-        else
-          format.json {error: "There was an error"}
+          @gee.save!
+
+          success = true
+        rescue
+          raise ActiveRecord::Rollback
         end
       end
+      if success
+        render json: @gee
+      else
+        render json: { error: @gee.errors }
+      end
+
     end
 
     private

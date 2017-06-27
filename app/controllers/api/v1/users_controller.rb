@@ -7,7 +7,10 @@ module Api::V1
     end
 
     def show
-      @user = User.includes(:gees).find(params[:id])
+      @user = User.includes(:gees).find_by(id: params[:id])
+      if @user.nil?
+        render json: { error: "User with ID #{params[:id]} does not exists" }
+      end
     end
   end
 end

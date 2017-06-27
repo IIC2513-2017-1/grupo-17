@@ -27,14 +27,37 @@ En las _seeds_ se han creado 3 usuarios para hacer pruebas:
 También es posible crearse una cuenta nueva, pero debe ingresarse un correo válido
 ya que el registro requiere confirmación del correo.
 
-### TODO's
-- Mejorar validación al crear Bet
-- Mejorar validación al crear Gees
-- Enviar mensajes de error correctos para cada validación
-- Unificar vista para ver mis amistades, mis solicitudes recibidas y mis solicitudes enviadas
-- Arreglar queries n+1
-- Agregar gráficos o estadísticas en index de bets
-- Definir qué cosas pueden modificar el usuario de su perfil
-- Revisar que funcione el cambio de contraseña
-- Descomentar la validación de minimo 1 Field para cada Gee (y con ello cambiar las seeds para que no tiren error)
-- Arreglar icono de notificaciones en producción (error de fontawesome en consola)
+## API
+
+Para todas las consultas a la API debe enviarse el api-token del usuario en el 
+header `Authorization`.
+
+Ejemplo: `Authorization: Token asM3NS-aswWSWda`
+
+### Endpoints válidos
+
+- GET /users (retorna lista de todos los usuarios)
+- GET /users/1 (retorna información de un usuario)
+- GET /notifications (retorna la lista de notificaciones del usuario)
+- GET /gees (retorna la lista de Gees visibles por el usuario)
+- POST /gees (crea un Gee)
+- GET /gees/1 (retorna información sobre un Gee específico)
+- GET /gees/1/bets (retorna la lista de Bets para un Gee específico)
+- POST /gees/1/bets (crea un Bet)
+- GET /gees/1/bets/1 (retorna la información de un Bet determinado)
+- GET /categories (retorna la lista de categorías existentes)
+
+#### POST /gees/1/bets
+El body debe contener:
+- `quantity (int)`: la cantidad de dinero a apostar
+- `fields (array)`: lista de los nombres de los campos que tiene el gee
+- `values (array)`: lista de los valores para cada campo (en el mismo orden)
+
+Ejemplo:
+```
+{
+	"quantity": 5,
+	"fields": ["Locale", "Visit"],
+	"values": [2,4]
+}
+```
