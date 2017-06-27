@@ -51,7 +51,7 @@ module Api::V1
 
       @gee.fields = @fields
 
-      @success = true
+      success = false
       Gee.transaction do
         begin
           for field in @gee.fields
@@ -62,9 +62,8 @@ module Api::V1
           end
           @gee.save!
 
-          @success = true
+          success = true
         rescue
-          @success = false
           raise ActiveRecord::Rollback
         end
       end
