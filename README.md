@@ -61,3 +61,32 @@ Ejemplo:
 	"values": [2,4]
 }
 ```
+
+#### POST /gees
+
+Ejemplo:
+```
+{
+	"name": "Soccer match",
+	"description": "A simple match",
+	"category_id": 1,
+	"is_public": true,
+	"expiration_date": "2017/12/12",
+	"fields": [
+		{
+			"name": "Score",
+			"type": "number",
+			"min_value": 0,
+			"max_value": 100
+		},
+		{
+			"name": "Winner",
+			"type": "alternatives",
+			"alternatives": [
+				"first",
+				"second"
+			]
+		}
+	]
+}
+```
