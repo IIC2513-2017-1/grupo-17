@@ -39,8 +39,9 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
+    @user.email_confirmed = true
     if @user.save
-      UserMailer.registration_confirmation(@user).deliver
+      #UserMailer.registration_confirmation(@user).deliver
       redirect_to login_path, notice: 'We have sent you an email to verify your email address.'
     else
       render :new

@@ -53,9 +53,9 @@ class GeesController < ApplicationController
         user = bet.user
         user.money += earnings
         user.save
-        UserMailer.gee_winner(user, @gee, earnings).deliver_later
+        #UserMailer.gee_winner(user, @gee, earnings).deliver_later
       else
-        UserMailer.gee_looser(bet.user, @gee).deliver_later
+        #UserMailer.gee_looser(bet.user, @gee).deliver_later
       end
     end
     redirect_to @gee, notice: 'The gee has been closed and the money has been distrubuted among bettors'
